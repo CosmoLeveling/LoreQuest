@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://drllabkrrm31p"
+path="res://.godot/imported/tile_default.png-bbb509c050d78092a997caba04d5892f.image"
+
+[deps]
+
+source_file="res://assets/tile_default.png"
+dest_files=["res://.godot/imported/tile_default.png-bbb509c050d78092a997caba04d5892f.image"]
+
+[params]
+

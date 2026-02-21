@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dfns8uhc1h7mi"]
+
+[ext_resource type="Shader" uid="uid://73mlbhmetrn6" path="res://scenes/gradient.gdshader" id="1_5de4t"]
+
+[resource]
+shader = ExtResource("1_5de4t")

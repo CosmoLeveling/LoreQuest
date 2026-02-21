@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dsj0oxt3t4gyc"]
+
+[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/panels.tres" id="1_nqrut"]
+[ext_resource type="Script" uid="uid://3hfgermbjcg4" path="res://scripts/room_template.gd" id="1_smsha"]
+[ext_resource type="Theme" uid="uid://cqibxoll77in2" path="res://assets/main_buttons.tres" id="3_vf6dh"]
+
+[node name="RoomTemplate" type="PanelContainer" unique_id=440580755]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_nqrut")
+script = ExtResource("1_smsha")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1497854144]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=997477955]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer" unique_id=395003136]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name"
+
+[node name="Select" type="Button" parent="MarginContainer/HBoxContainer" unique_id=104950700]
+layout_mode = 2
+theme = ExtResource("3_vf6dh")
+text = "Select"
+
+[node name="Trash" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1486070402]
+layout_mode = 2
+theme = ExtResource("3_vf6dh")
+text = "Trash"
+
+[node name="ChooseWall" type="Button" parent="MarginContainer/HBoxContainer" unique_id=299452600]
+layout_mode = 2
+theme = ExtResource("3_vf6dh")
+text = "Choose Wall"
+
+[node name="ChooseFloor" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1972227608]
+layout_mode = 2
+theme = ExtResource("3_vf6dh")
+text = "Choose Floor"
+
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Trash" to="." method="_on_trash_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ChooseWall" to="." method="_on_choose_wall_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ChooseFloor" to="." method="_on_choose_floor_pressed"]

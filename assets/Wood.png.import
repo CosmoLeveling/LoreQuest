@@ -1,0 +1,25 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://bdtxtmlbjah00"
+path="res://.godot/imported/Wood.png-7d27a143209fc8593a7a69e45b4cfc01.fontdata"
+
+[deps]
+
+source_file="res://assets/Wood.png"
+dest_files=["res://.godot/imported/Wood.png-7d27a143209fc8593a7a69e45b4cfc01.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("\'A\'-\'Z\'", "\'0\'-\'9\'", "\'a\'-\'z\'", "\':\'", "\' \'", "\'(\'", "\')\'", "\'/\'", "\'\\\'", "\'-\'", "\'.\'")
+kerning_pairs=PackedStringArray()
+columns=12
+rows=6
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=0
+descent=0
+fallbacks=[]
+compress=true
+scaling_mode=2
