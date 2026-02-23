@@ -14,4 +14,5 @@ func _on_save_pressed() -> void:
 	get_tree().current_scene.load_save()
 	get_tree().current_scene._reload_characters()
 	get_tree().current_scene._reload_worlds()
-	queue_free()
+	get_tree().current_scene.backups_open = false
+	get_parent().queue_free()

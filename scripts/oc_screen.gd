@@ -1,4 +1,7 @@
 extends Control
+
+const KENNEY_UI = preload("uid://6shp5ck1tnja")
+
 const BACKUPS_MENU = preload("uid://dren5fnwqpe4r")
 const CHARACTER_TEMPLATE = preload("uid://c1ef73xwn2auw")
 const CHARACTER_MENU = preload("uid://d1klvxp06pdqr")
@@ -17,9 +20,10 @@ var new_image:String
 #endregion
 
 #region OnReadys
+@onready var windows: Control = $Windows
 @onready var title: Label = $MarginContainer/VBoxContainer/HBoxContainer2/Title
 @onready var character_grid: GridContainer = $MarginContainer/VBoxContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CenterContainer/CharacterGrid
-@onready var current_menu: Node = $CurrentMenu
+@onready var themes_button: OptionButton = $MarginContainer/VBoxContainer/HBoxContainer/ThemesButton
 
 @onready var world_grid: GridContainer = $MarginContainer/VBoxContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer/WorldGrid
 @onready var characters_button: Button = $MarginContainer/VBoxContainer/HBoxContainer3/CharactersButton
@@ -47,8 +51,15 @@ var new_image:String
 
 #endregion
 
+var backups_open:bool = false
+
+@export var themes:Dictionary[String,Theme]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for i_theme in themes.keys():
+		themes_button.add_item(i_theme)
+	get_tree().root.theme = themes["Default"]
 	thread = Thread.new()
 	await load_save()
 	if not DirAccess.dir_exists_absolute(save_dir):
@@ -97,9 +108,15 @@ func _reload_characters() -> void:
 	amount.text = "Current Amount: "+str(characters.size())
 
 func open_character(character:Character):
-	var menu = CHARACTER_MENU.instantiate()
-	menu.character = character
-	$CurrentMenu.add_child(menu)
+	if not character.open:
+		character.open = true
+		var window = Window.new()
+		var menu = CHARACTER_MENU.instantiate()
+		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
+		menu.character = character
+		windows.add_child(window)
+		window.title = character.name
+		window.add_child(menu)
 
 func _sort_characters() -> void:
 	var char_dict: Dictionary[String,Character]
@@ -122,9 +139,15 @@ func _reload_worlds() -> void:
 		world.deleted.connect(start_save_thread)
 
 func open_world(world:World):
-	var menu = WORLD_MENU.instantiate()
-	menu.world = world
-	$CurrentMenu.add_child(menu)
+	if not world.open:
+		world.open = true
+		var window = Window.new()
+		var menu = WORLD_MENU.instantiate()
+		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
+		menu.world = world
+		windows.add_child(window)
+		window.title = world.name
+		window.add_child(menu)
 
 func _sort_worlds() -> void:
 	var world_dict: Dictionary[String,World]
@@ -216,8 +239,38 @@ func start_save_thread():
 	thread.start(save)
 
 func load_save():
+	_load_settings()
 	_load_characters()
 	_load_worlds()
+
+func _load_settings() -> void:
+	if not FileAccess.file_exists(save_dir + "/settings.save"):
+		return # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	var save_file = FileAccess.open(save_dir+"/settings.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+
+		# Creates the helper class to interact with JSON.
+		var json = JSON.new()
+
+		# Check if there is any error while parsing the JSON string, skip in case of failure.
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+
+		# Get the data from the JSON object.
+		var node_data:Dictionary = json.data
+
+		if themes.has(node_data.get("theme","Default")):
+			var option:String = node_data.get("theme","Default")
+			for i in range(themes_button.get_item_count()):
+				if themes_button.get_item_text(i) == option:
+					themes_button.select(i)
+			get_tree().root.theme = themes[option]
 
 func _load_characters() -> void:
 	if not FileAccess.file_exists(save_dir + "/characters.save"):
@@ -274,8 +327,17 @@ func _load_worlds() -> void:
 		worlds.append(world)
 
 func save():
+	_save_settings()
 	_save_characters()
 	_save_worlds()
+
+func _save_settings():
+	var save_file = FileAccess.open(save_dir+"/settings.save",FileAccess.WRITE)
+	var data:Dictionary = {
+		"theme":themes_button.get_item_text(themes_button.get_item_index(themes_button.get_selected_id()))
+	}
+	var json_string = JSON.stringify(data)
+	save_file.store_line(json_string)
 
 func _save_characters():
 	var save_file = FileAccess.open(save_dir+"/characters.save",FileAccess.WRITE)
@@ -335,5 +397,16 @@ func _on_saves_folder_pressed() -> void:
 
 
 func _on_backups_pressed() -> void:
-	var menu = BACKUPS_MENU.instantiate()
-	$CurrentMenu.add_child(menu)
+	if not backups_open:
+		backups_open=true
+		var window = Window.new()
+		var menu = BACKUPS_MENU.instantiate()
+		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
+		windows.add_child(window)
+		window.title = "backup"
+		window.add_child(menu)
+
+
+func _on_themes_button_item_selected(index: int) -> void:
+	var option:String  = themes_button.get_item_text(index)
+	get_tree().root.theme = themes[option]

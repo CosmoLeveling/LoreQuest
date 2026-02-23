@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmdwls260378r"
-path="res://.godot/imported/Wooden Pixel Art GUI 32x32.png-1b6ab9f89d1ffcd71fe88a38cc10dbc5.ctex"
+uid="uid://d00ws7wljnit4"
+path="res://.godot/imported/UIpack_vector.svg-007e772e30f3d8af8a2cf9562c52b77c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wooden Pixel Art GUI 32x32.png"
-dest_files=["res://.godot/imported/Wooden Pixel Art GUI 32x32.png-1b6ab9f89d1ffcd71fe88a38cc10dbc5.ctex"]
+source_file="res://assets/themes/UIpack_vector.svg"
+dest_files=["res://.godot/imported/UIpack_vector.svg-007e772e30f3d8af8a2cf9562c52b77c.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

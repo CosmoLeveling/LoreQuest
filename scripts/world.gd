@@ -7,6 +7,7 @@ var world_map_path:String
 var name:String
 var description:String = ""
 var history:String = ""
+var open:bool = false
 func _init(name_val:String,new_image_path:String) -> void:
 	name = name_val
 	image_path = new_image_path

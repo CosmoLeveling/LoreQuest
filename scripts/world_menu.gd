@@ -7,6 +7,8 @@ extends Control
 @onready var world_history: TextEdit = $MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/WorldHistory/VBoxContainer/WorldHistory
 @onready var world_map: TextureRect = $MarginContainer/HBoxContainer/ScrollContainer/VBoxContainer/WorldMap/VBoxContainer/WorldMap
 const WORLD_EDITOR_MENU = preload("uid://cqad5ks87iorf")
+@onready var world_editor: Control = $Window/WorldEditor
+@onready var window: Window = $Window
 
 var world:World
 func _ready() -> void:
@@ -48,7 +50,8 @@ func _on_file_dialog_file_selected(path: String) -> void:
 func _on_save_pressed() -> void:
 	get_tree().current_scene.start_save_thread()
 	get_tree().current_scene._reload_worlds()
-	queue_free()
+	world.open = false
+	get_parent().queue_free()
 
 func _on_description_text_changed() -> void:
 	world.description = description.text
@@ -76,4 +79,5 @@ func _on_choose_map_pressed() -> void:
 func _on_world_edit_pressed() -> void:
 	var editor = WORLD_EDITOR_MENU.instantiate()
 	editor.world = world
-	$WorldEditor.add_child(editor)
+	world_editor.add_child(editor)
+	window.show()

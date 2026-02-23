@@ -3,12 +3,12 @@
 importer="font_data_image"
 type="FontFile"
 uid="uid://bdtxtmlbjah00"
-path="res://.godot/imported/Wood.png-7d27a143209fc8593a7a69e45b4cfc01.fontdata"
+path="res://.godot/imported/Wood.png-49aa96843b0eca95c0e864d2e4fc2d90.fontdata"
 
 [deps]
 
-source_file="res://assets/Wood.png"
-dest_files=["res://.godot/imported/Wood.png-7d27a143209fc8593a7a69e45b4cfc01.fontdata"]
+source_file="res://assets/fonts/Wood.png"
+dest_files=["res://.godot/imported/Wood.png-49aa96843b0eca95c0e864d2e4fc2d90.fontdata"]
 
 [params]
 

@@ -5,9 +5,11 @@ var world:World
 
 func _ready() -> void:
 	world_editor.world = world
+	world_editor.theme = get_tree().root.theme
 	world_editor.init()
 
 
 func _on_save_pressed() -> void:
 	get_tree().current_scene.start_save_thread()
+	get_parent().get_parent().hide()
 	queue_free()

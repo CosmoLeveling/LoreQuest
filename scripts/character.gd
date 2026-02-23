@@ -12,6 +12,7 @@ var max_mana:int = 0
 var abilities:Array[Ability]
 var items:Array[Item]
 var notes:Array[Note]
+var open:bool = false
 func _init(name_val:String,new_image_path:String) -> void:
 	name = name_val
 	image_path = new_image_path

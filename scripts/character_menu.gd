@@ -112,7 +112,8 @@ func _on_new_ability_pressed() -> void:
 func _on_save_pressed() -> void:
 	get_tree().current_scene.start_save_thread()
 	get_tree().current_scene._reload_characters()
-	queue_free()
+	character.open = false
+	get_parent().queue_free()
 
 func _on_description_text_changed() -> void:
 	character.description = description.text

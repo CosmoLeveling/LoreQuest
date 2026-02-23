@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bpjbaktxmcibh" path="res://scripts/world_editor.gd" id="1_xhvx2"]
 [ext_resource type="PackedScene" uid="uid://dsj0oxt3t4gyc" path="res://scenes/room_template.tscn" id="2_hi0jt"]
-[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/panels.tres" id="2_p1n5p"]
-[ext_resource type="Theme" uid="uid://cqibxoll77in2" path="res://assets/main_buttons.tres" id="3_d3wfe"]
 [ext_resource type="Script" uid="uid://ckwah65n4b8u3" path="res://scripts/background.gd" id="5_d3wfe"]
 
 [node name="WorldEditor" type="Control" unique_id=2144105472]
@@ -28,8 +26,8 @@ mouse_filter = 1
 anchors_preset = -1
 anchor_right = 0.3
 anchor_bottom = 1.0
+offset_right = 129.0
 grow_vertical = 2
-theme = ExtResource("2_p1n5p")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=1238418424]
 layout_mode = 2
@@ -52,14 +50,12 @@ alignment = 1
 
 [node name="NewRoom" type="Button" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1781296342]
 layout_mode = 2
-theme = ExtResource("3_d3wfe")
 text = "New Room"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=135973953]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
-theme = ExtResource("3_d3wfe")
 
 [node name="RoomBox" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1275095171]
 layout_mode = 2
@@ -73,12 +69,13 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 178.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NameSelect" type="PanelContainer" parent="CanvasLayer/LineName" unique_id=106490675]
 layout_mode = 2
-theme = ExtResource("2_p1n5p")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LineName/NameSelect" unique_id=2024045214]
 layout_mode = 2
@@ -96,13 +93,11 @@ text = "Enter Shape Name"
 
 [node name="NameLine" type="LineEdit" parent="CanvasLayer/LineName/NameSelect/MarginContainer/VBoxContainer" unique_id=1856206942]
 layout_mode = 2
-theme = ExtResource("3_d3wfe")
 placeholder_text = "Name"
 alignment = 1
 
 [node name="SubmitName" type="Button" parent="CanvasLayer/LineName/NameSelect/MarginContainer/VBoxContainer" unique_id=329137627]
 layout_mode = 2
-theme = ExtResource("3_d3wfe")
 text = "Submit"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=85910698]
@@ -116,7 +111,7 @@ offset_bottom = 40.0
 script = ExtResource("5_d3wfe")
 
 [node name="WallDialog" type="FileDialog" parent="." unique_id=805068704]
-title = "Choose Image"
+title = "Open a File"
 initial_position = 4
 file_mode = 0
 access = 2
@@ -124,7 +119,7 @@ filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
 use_native_dialog = true
 
 [node name="FloorDialog" type="FileDialog" parent="." unique_id=1721872763]
-title = "Choose Image"
+title = "Open a File"
 initial_position = 4
 file_mode = 0
 access = 2

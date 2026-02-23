@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://di1h22fa7033t"
+path="res://.godot/imported/default_world_map.png-a5d74008a413e1a17a09bd0e9ad612d8.image"
+
+[deps]
+
+source_file="res://assets/icons/default_world_map.png"
+dest_files=["res://.godot/imported/default_world_map.png-a5d74008a413e1a17a09bd0e9ad612d8.image"]
+
+[params]
+

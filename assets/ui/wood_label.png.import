@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2v5126ff6821"
-path="res://.godot/imported/arrows.png-4802d5ef5af2af6fa5f490e680067993.ctex"
+uid="uid://2atib6es74h7"
+path="res://.godot/imported/wood_label.png-ef276cc3c6b6a65d6deb3617a1523144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arrows.png"
-dest_files=["res://.godot/imported/arrows.png-4802d5ef5af2af6fa5f490e680067993.ctex"]
+source_file="res://assets/ui/wood_label.png"
+dest_files=["res://.godot/imported/wood_label.png-ef276cc3c6b6a65d6deb3617a1523144.ctex"]
 
 [params]
 

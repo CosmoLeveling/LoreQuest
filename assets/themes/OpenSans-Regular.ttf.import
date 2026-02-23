@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://jcpmgtxnhnpi"
-path="res://.godot/imported/CaveatBrush-Regular.ttf-edbcf9d7ef76673180bde51a40512ccd.fontdata"
+uid="uid://d0wjjeirbt73o"
+path="res://.godot/imported/OpenSans-Regular.ttf-4fca584f42043bed2ffd018e80b168fe.fontdata"
 
 [deps]
 
-source_file="res://assets/CaveatBrush-Regular.ttf"
-dest_files=["res://.godot/imported/CaveatBrush-Regular.ttf-edbcf9d7ef76673180bde51a40512ccd.fontdata"]
+source_file="res://assets/themes/OpenSans-Regular.ttf"
+dest_files=["res://.godot/imported/OpenSans-Regular.ttf-4fca584f42043bed2ffd018e80b168fe.fontdata"]
 
 [params]
 

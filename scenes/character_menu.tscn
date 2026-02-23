@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://d1klvxp06pdqr"]
 
 [ext_resource type="Script" uid="uid://dty8yjwrvraxc" path="res://scripts/character_menu.gd" id="1_pvdot"]
-[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/panels.tres" id="2_4wqoi"]
-[ext_resource type="Theme" uid="uid://cqibxoll77in2" path="res://assets/main_buttons.tres" id="4_oqv88"]
+[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/themes/main_theme.tres" id="2_4wqoi"]
+[ext_resource type="FontFile" uid="uid://jcpmgtxnhnpi" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="4_l2xjd"]
 [ext_resource type="Material" uid="uid://dfns8uhc1h7mi" path="res://assets/gradient.tres" id="4_pvdot"]
+[ext_resource type="Texture2D" uid="uid://id44hxhpp522" path="res://assets/ui/button_normal.png" id="5_tti22"]
+[ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://assets/ui/button_hovered.png" id="6_e4rlm"]
+[ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://assets/ui/button_pressed.png" id="7_2ppc3"]
+[ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://assets/ui/scroll.png" id="8_sstho"]
 
-[sub_resource type="Image" id="Image_pvdot"]
+[sub_resource type="Image" id="Image_l2xjd"]
 data = {
 "data": PackedByteArray(20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255),
 "format": "RGBA8",
@@ -15,7 +19,118 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_pvdot"]
-image = SubResource("Image_pvdot")
+image = SubResource("Image_l2xjd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72rxd"]
+texture = ExtResource("5_tti22")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3j1n7"]
+texture = ExtResource("6_e4rlm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ur6v"]
+texture = ExtResource("6_e4rlm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4cjn"]
+texture = ExtResource("7_2ppc3")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6pjdy"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osbnp"]
+atlas = SubResource("CompressedTexture2D_6pjdy")
+region = Rect2(1, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43mme"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_osbnp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ksylv"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5n2m"]
+atlas = SubResource("CompressedTexture2D_ksylv")
+region = Rect2(1, 17, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2k7va"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_g5n2m")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmiwu"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsjp"]
+atlas = SubResource("CompressedTexture2D_cmiwu")
+region = Rect2(1, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xihlp"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_rbsjp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pjdy"]
+atlas = ExtResource("8_sstho")
+region = Rect2(1, 49, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uggy0"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_6pjdy")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_41oo2"]
+Button/colors/font_color = Color(0.61935264, 0.456662, 0.3650089, 1)
+Button/colors/font_disabled_color = Color(0.61960787, 0.45490196, 0.3647059, 0.5019608)
+Button/fonts/font = ExtResource("4_l2xjd")
+Button/styles/disabled = SubResource("StyleBoxTexture_72rxd")
+Button/styles/focus = SubResource("StyleBoxTexture_3j1n7")
+Button/styles/hover = SubResource("StyleBoxTexture_5ur6v")
+Button/styles/normal = SubResource("StyleBoxTexture_72rxd")
+Button/styles/pressed = SubResource("StyleBoxTexture_f4cjn")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_43mme")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_2k7va")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_xihlp")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_uggy0")
 
 [node name="CharacterMenu" type="Control" unique_id=137672067]
 layout_mode = 3
@@ -76,7 +191,6 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1381311206]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=879141254]
 layout_mode = 2
@@ -90,7 +204,6 @@ autowrap_mode = 3
 
 [node name="Rename" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1088225263]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "Rename"
 
 [node name="Avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=585915707]
@@ -103,13 +216,11 @@ stretch_mode = 6
 
 [node name="ChangeImage" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=858942007]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "Change Image"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1101778411]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=1416919134]
 layout_mode = 2
@@ -130,14 +241,12 @@ alignment = 1
 custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 placeholder_text = "Description"
 wrap_mode = 1
 scroll_smooth = true
 
 [node name="Save" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1192068264]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "Save and Close"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1971103103]
@@ -151,20 +260,17 @@ alignment = 1
 [node name="AbilityItemButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=446419146]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_oqv88")
 disabled = true
 text = "Abilities/Items"
 
 [node name="GalleryButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=961744694]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_oqv88")
 text = "Gallery"
 
 [node name="NotesButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1725477319]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_oqv88")
 text = "Notes"
 
 [node name="Tabs" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1475104843]
@@ -191,7 +297,6 @@ grow_vertical = 2
 [node name="Abilities" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer" unique_id=821651156]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities" unique_id=934162121]
 layout_mode = 2
@@ -208,7 +313,6 @@ alignment = 1
 
 [node name="NewAbility" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=1285188718]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "ADD"
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=101992548]
@@ -246,7 +350,6 @@ allow_greater = true
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer" unique_id=899654456]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 
 [node name="AbilityBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/ScrollContainer" unique_id=1309785607]
 layout_mode = 2
@@ -255,7 +358,6 @@ size_flags_horizontal = 3
 [node name="Items" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer" unique_id=1451343294]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Items" unique_id=1415906998]
 layout_mode = 2
@@ -272,13 +374,11 @@ alignment = 1
 
 [node name="NewItem" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Items/VBoxContainer/HBoxContainer" unique_id=822863886]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "ADD"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Items/VBoxContainer" unique_id=855356428]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 
 [node name="ItemBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Items/VBoxContainer/ScrollContainer" unique_id=628383475]
 layout_mode = 2
@@ -299,7 +399,6 @@ layout_mode = 0
 offset_right = 808.0
 offset_bottom = 575.0
 size_flags_horizontal = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery/Panel" unique_id=997938347]
 layout_mode = 2
@@ -317,13 +416,11 @@ alignment = 1
 [node name="AddGalleryImage" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery/Panel/VBoxContainer/HBoxContainer" unique_id=2084420497]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_oqv88")
 text = "Add Image"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery/Panel/VBoxContainer" unique_id=1625027823]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery/Panel/VBoxContainer/ScrollContainer" unique_id=1607731244]
 layout_mode = 2
@@ -348,7 +445,6 @@ layout_mode = 0
 offset_right = 808.0
 offset_bottom = 575.0
 size_flags_horizontal = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes/Panel" unique_id=418087634]
 layout_mode = 2
@@ -366,13 +462,11 @@ alignment = 1
 [node name="AddNote" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes/Panel/VBoxContainer/HBoxContainer" unique_id=259682350]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("4_oqv88")
 text = "Add Note"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes/Panel/VBoxContainer" unique_id=629165163]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_oqv88")
 
 [node name="NotesBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes/Panel/VBoxContainer/ScrollContainer" unique_id=887117540]
 layout_mode = 2
@@ -410,7 +504,7 @@ layout_mode = 2
 
 [node name="AbilitySubmitName" type="Button" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1988449868]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
+theme = SubResource("Theme_41oo2")
 text = "Submit"
 
 [node name="ItemCreate" type="CenterContainer" parent="." unique_id=264686282]
@@ -445,7 +539,7 @@ layout_mode = 2
 
 [node name="ItemSubmitName" type="Button" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1642388691]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
+theme = SubResource("Theme_41oo2")
 text = "Submit"
 
 [node name="NameChange" type="CenterContainer" parent="." unique_id=879785999]
@@ -477,13 +571,13 @@ text = "Enter Character Name"
 
 [node name="NameLine" type="LineEdit" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=1668244254]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
+theme = SubResource("Theme_41oo2")
 placeholder_text = "Name"
 alignment = 1
 
 [node name="SubmitName" type="Button" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=796679933]
 layout_mode = 2
-theme = ExtResource("4_oqv88")
+theme = SubResource("Theme_41oo2")
 text = "Submit"
 
 [node name="ImageView" type="CenterContainer" parent="." unique_id=1831847543]
@@ -498,7 +592,6 @@ grow_vertical = 2
 [node name="Panel" type="PanelContainer" parent="ImageView" unique_id=1218511913]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_4wqoi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ImageView/Panel" unique_id=371219071]
 layout_mode = 2
@@ -516,7 +609,6 @@ horizontal_alignment = 1
 [node name="Close" type="Button" parent="ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=266144517]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
-theme = ExtResource("4_oqv88")
 text = "X"
 
 [node name="ImageViewTexture" type="TextureRect" parent="ImageView/Panel/VBoxContainer" unique_id=1640987004]

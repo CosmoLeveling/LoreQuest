@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dxl70y07ydojx"
+path="res://.godot/imported/default.png-f10bdce9b916ef27bec16bb2d78b6830.image"
+
+[deps]
+
+source_file="res://assets/icons/default.png"
+dest_files=["res://.godot/imported/default.png-f10bdce9b916ef27bec16bb2d78b6830.image"]
+
+[params]
+

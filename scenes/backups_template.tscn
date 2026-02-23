@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://mqfahftx5qk1"]
 
-[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/panels.tres" id="1_4kgth"]
 [ext_resource type="Script" uid="uid://ifhsrwawlj24" path="res://scripts/backups_template.gd" id="2_mgg5s"]
-[ext_resource type="Theme" uid="uid://cqibxoll77in2" path="res://assets/main_buttons.tres" id="2_rn587"]
 
 [node name="BackupsTemplate" type="PanelContainer" unique_id=152856914]
 offset_right = 297.0
 offset_bottom = 93.0
-theme = ExtResource("1_4kgth")
 script = ExtResource("2_mgg5s")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2066118148]
@@ -33,12 +30,10 @@ autowrap_mode = 2
 
 [node name="Flashback" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1517480654]
 layout_mode = 2
-theme = ExtResource("2_rn587")
 text = "Flashback"
 
 [node name="Trash" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1087470153]
 layout_mode = 2
-theme = ExtResource("2_rn587")
 text = "Trash"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Flashback" to="." method="_on_flashback_pressed"]

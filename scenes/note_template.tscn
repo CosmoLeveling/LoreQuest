@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://dnlgwise5jnbd"]
 
-[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/panels.tres" id="1_fp705"]
 [ext_resource type="Script" uid="uid://c5g1n1yhto3g0" path="res://scripts/note_template.gd" id="2_mn3vr"]
-[ext_resource type="Theme" uid="uid://cqibxoll77in2" path="res://assets/main_buttons.tres" id="3_qngfm"]
 
 [node name="NoteTemplate" type="PanelContainer" unique_id=152856914]
 offset_right = 170.0
 offset_bottom = 90.0
-theme = ExtResource("1_fp705")
 script = ExtResource("2_mn3vr")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2066118148]
@@ -39,7 +36,6 @@ layout_mode = 2
 [node name="Trash" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1517480654]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("3_qngfm")
 text = "Trash"
 
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

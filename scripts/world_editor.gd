@@ -7,6 +7,7 @@ const ROOM_TEMPLATE = preload("uid://dsj0oxt3t4gyc")
 
 @onready var room_box: VBoxContainer = $CanvasLayer/Panel/MarginContainer/VBoxContainer/ScrollContainer/RoomBox
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var panel: PanelContainer = $CanvasLayer/Panel
 
 var wall_room:Room
 var floor_room:Room
@@ -113,6 +114,10 @@ func _update_drag():
 	if current_room.can_move_point(dragged_point_index, new_pos):
 		current_room.points[dragged_point_index] = new_pos
 		current_room.points_changed.emit()
+
+func _ready() -> void:
+	panel.theme = get_tree().root.theme
+	line_name.theme = get_tree().root.theme
 
 func init() -> void:
 	for c in room_box.get_children():
