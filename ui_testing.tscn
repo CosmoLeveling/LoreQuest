@@ -1,15 +1,16 @@
-[gd_scene format=3 uid="uid://d1klvxp06pdqr"]
+[gd_scene format=3 uid="uid://bqovrk1m0w5e0"]
 
-[ext_resource type="Script" uid="uid://dty8yjwrvraxc" path="res://scripts/character_menu.gd" id="1_pvdot"]
-[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/themes/main_theme.tres" id="2_4wqoi"]
-[ext_resource type="FontFile" uid="uid://jcpmgtxnhnpi" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="4_l2xjd"]
-[ext_resource type="Material" uid="uid://dfns8uhc1h7mi" path="res://assets/gradient.tres" id="4_pvdot"]
-[ext_resource type="Texture2D" uid="uid://id44hxhpp522" path="res://assets/ui/button_normal.png" id="5_tti22"]
-[ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://assets/ui/button_hovered.png" id="6_e4rlm"]
-[ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://assets/ui/button_pressed.png" id="7_2ppc3"]
-[ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://assets/ui/scroll.png" id="8_sstho"]
+[ext_resource type="Script" uid="uid://dty8yjwrvraxc" path="res://scripts/character_menu.gd" id="1_hr1mk"]
+[ext_resource type="Material" uid="uid://dfns8uhc1h7mi" path="res://assets/gradient.tres" id="2_1nvvt"]
+[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://assets/themes/main_theme.tres" id="3_0id5j"]
+[ext_resource type="FontFile" uid="uid://jcpmgtxnhnpi" path="res://assets/fonts/CaveatBrush-Regular.ttf" id="4_1vafl"]
+[ext_resource type="Texture2D" uid="uid://id44hxhpp522" path="res://assets/ui/button_normal.png" id="5_rn2oi"]
+[ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://assets/ui/button_hovered.png" id="6_40pba"]
+[ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://assets/ui/button_pressed.png" id="7_tad55"]
+[ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://assets/ui/scroll.png" id="8_t4uy0"]
+[ext_resource type="PackedScene" uid="uid://d1klvxp06pdqr" path="res://scenes/character_menu.tscn" id="9_hr1mk"]
 
-[sub_resource type="Image" id="Image_l2xjd"]
+[sub_resource type="Image" id="Image_lpfan"]
 data = {
 "data": PackedByteArray(20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255),
 "format": "RGBA8",
@@ -19,31 +20,31 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_pvdot"]
-image = SubResource("Image_l2xjd")
+image = SubResource("Image_lpfan")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72rxd"]
-texture = ExtResource("5_tti22")
+texture = ExtResource("5_rn2oi")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3j1n7"]
-texture = ExtResource("6_e4rlm")
+texture = ExtResource("6_40pba")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ur6v"]
-texture = ExtResource("6_e4rlm")
+texture = ExtResource("6_40pba")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4cjn"]
-texture = ExtResource("7_2ppc3")
+texture = ExtResource("7_tad55")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -104,7 +105,7 @@ texture_margin_right = 1.0
 texture_margin_bottom = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pjdy"]
-atlas = ExtResource("8_sstho")
+atlas = ExtResource("8_t4uy0")
 region = Rect2(1, 49, 14, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uggy0"]
@@ -121,7 +122,7 @@ texture_margin_bottom = 1.0
 [sub_resource type="Theme" id="Theme_41oo2"]
 Button/colors/font_color = Color(0.61935264, 0.456662, 0.3650089, 1)
 Button/colors/font_disabled_color = Color(0.61960787, 0.45490196, 0.3647059, 0.5019608)
-Button/fonts/font = ExtResource("4_l2xjd")
+Button/fonts/font = ExtResource("4_1vafl")
 Button/styles/disabled = SubResource("StyleBoxTexture_72rxd")
 Button/styles/focus = SubResource("StyleBoxTexture_3j1n7")
 Button/styles/hover = SubResource("StyleBoxTexture_5ur6v")
@@ -132,16 +133,24 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_2k7va")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_xihlp")
 VScrollBar/styles/scroll = SubResource("StyleBoxTexture_uggy0")
 
-[node name="CharacterMenu" type="Control" unique_id=137672067]
+[node name="UiTesting" type="Control" unique_id=1278847794]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pvdot")
 
-[node name="FileDialog" type="FileDialog" parent="." unique_id=1162622462]
+[node name="CharacterMenu" type="Control" parent="." unique_id=1142604780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hr1mk")
+
+[node name="FileDialog" type="FileDialog" parent="CharacterMenu" unique_id=935645644]
 oversampling_override = 1.0
 title = "Open a File"
 initial_position = 2
@@ -151,7 +160,7 @@ access = 2
 filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
 use_native_dialog = true
 
-[node name="GalleryFileDialog" type="FileDialog" parent="." unique_id=711785201]
+[node name="GalleryFileDialog" type="FileDialog" parent="CharacterMenu" unique_id=257174171]
 oversampling_override = 1.0
 title = "Open a File"
 initial_position = 2
@@ -161,7 +170,7 @@ access = 2
 filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
 use_native_dialog = true
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=516035177]
+[node name="ColorRect2" type="ColorRect" parent="CharacterMenu" unique_id=1320687978]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,7 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.098353826, 0.08140286, 0.13796946, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=404907314]
+[node name="MarginContainer" type="MarginContainer" parent="CharacterMenu" unique_id=1145741381]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,62 +191,62 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=876009479]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer" unique_id=1230039277]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1904026621]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer" unique_id=2140501616]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1381311206]
+[node name="PanelContainer" type="PanelContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=528903889]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=879141254]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=986279652]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=118860732]
+[node name="Name" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1823525251]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "NAME"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Rename" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1088225263]
+[node name="Rename" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1365532057]
 layout_mode = 2
 text = "Rename"
 
-[node name="Avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=585915707]
-material = ExtResource("4_pvdot")
+[node name="Avatar" type="TextureRect" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=755783274]
+material = ExtResource("2_1nvvt")
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 texture = SubResource("ImageTexture_pvdot")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="ChangeImage" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=858942007]
+[node name="ChangeImage" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1043611753]
 layout_mode = 2
 text = "Change Image"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1101778411]
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1298752458]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=1416919134]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=163916768]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Pronouns" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1044192569]
+[node name="Pronouns" type="LineEdit" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=150492020]
 layout_mode = 2
 placeholder_text = "Pronouns"
 alignment = 1
 
-[node name="Race" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1671910856]
+[node name="Race" type="LineEdit" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=13724125]
 layout_mode = 2
 placeholder_text = "Race"
 alignment = 1
 
-[node name="Description" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1760835510]
+[node name="Description" type="TextEdit" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1406463701]
 custom_minimum_size = Vector2(0, 87)
 layout_mode = 2
 size_flags_vertical = 3
@@ -246,191 +255,201 @@ wrap_mode = 1
 scroll_smooth = true
 scroll_fit_content_height = true
 
-[node name="Save" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1192068264]
+[node name="Save" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1933346333]
 layout_mode = 2
 text = "Save and Close"
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer" unique_id=699099030]
+[node name="TabContainer" type="TabContainer" parent="CharacterMenu/MarginContainer/HBoxContainer" unique_id=197472700]
 layout_mode = 2
 size_flags_horizontal = 3
 tab_alignment = 1
 current_tab = 0
 
-[node name="Items&Abilities" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=1215433315]
+[node name="Items&Abilities" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer" unique_id=1068545199]
 layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "Items/Abilities"
 metadata/_tab_index = 0
 
-[node name="Abilities" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities" unique_id=1870284321]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities" unique_id=1667139618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Abilities" type="PanelContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer" unique_id=1507879268]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities" unique_id=387908258]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities" unique_id=308558399]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=235834462]
+[node name="Label" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer" unique_id=82210675]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Abilities"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=1274356102]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer" unique_id=2120056166]
 layout_mode = 2
 alignment = 1
 
-[node name="NewAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=1987300254]
+[node name="NewAbility" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=1608517634]
 layout_mode = 2
 text = "ADD"
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=840845980]
+[node name="Control" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=1589298111]
 custom_minimum_size = Vector2(10.45, 0)
 layout_mode = 2
 
-[node name="Mana" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=940610487]
+[node name="Mana" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=878918619]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Mana:"
 vertical_alignment = 1
 
-[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=637415439]
+[node name="Control2" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=2138806430]
 layout_mode = 2
 
-[node name="ManaSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=697930366]
+[node name="ManaSpinBox" type="SpinBox" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=770179222]
 layout_mode = 2
 
-[node name="Control4" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=583524037]
+[node name="Control4" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=2043169865]
 layout_mode = 2
 
-[node name="MaxMana" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=691131630]
+[node name="MaxMana" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=756277300]
 layout_mode = 2
 size_flags_vertical = 1
 text = "Max Mana:"
 vertical_alignment = 1
 
-[node name="Control3" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=2065802550]
+[node name="Control3" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=110237343]
 layout_mode = 2
 
-[node name="MaxManaSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=1212992031]
+[node name="MaxManaSpinBox" type="SpinBox" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=1336709405]
 layout_mode = 2
 allow_greater = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=160756508]
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer" unique_id=1186849215]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AbilityBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/ScrollContainer" unique_id=1111365185]
+[node name="AbilityBox" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/ScrollContainer" unique_id=1877305140]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Items" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities" unique_id=1793139028]
+[node name="Items" type="PanelContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer" unique_id=62761659]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items" unique_id=1572092996]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items" unique_id=561579839]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=553759428]
+[node name="Label" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer" unique_id=60048059]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Items"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=622701872]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer" unique_id=649293216]
 layout_mode = 2
 alignment = 1
 
-[node name="NewItem" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer" unique_id=1955209751]
+[node name="NewItem" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer/HBoxContainer" unique_id=361821094]
 layout_mode = 2
 text = "ADD"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=502332282]
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer" unique_id=2002762184]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ItemBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/ScrollContainer" unique_id=622327207]
+[node name="ItemBox" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer/ScrollContainer" unique_id=1696215074]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Gallery" type="Control" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=160214747]
+[node name="Gallery" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer" unique_id=604138448]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 1
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery" unique_id=1361588215]
+[node name="Panel" type="PanelContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery" unique_id=540046096]
 layout_mode = 0
 offset_right = 808.0
 offset_bottom = 575.0
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel" unique_id=1329625717]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel" unique_id=1437184776]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1364708946]
+[node name="Label" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=688383855]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Gallery"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1589402524]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=238141362]
 layout_mode = 2
 alignment = 1
 
-[node name="AddGalleryImage" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/HBoxContainer" unique_id=1578566406]
+[node name="AddGalleryImage" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/HBoxContainer" unique_id=530968717]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Add Image"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1866012329]
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=50401467]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer" unique_id=155740443]
+[node name="CenterContainer" type="CenterContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer" unique_id=1703363397]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GalleryGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer" unique_id=1938554690]
+[node name="GalleryGrid" type="GridContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer" unique_id=869442684]
 layout_mode = 2
 columns = 3
 
-[node name="Notes" type="Control" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=666509607]
+[node name="Notes" type="Control" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer" unique_id=758639641]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 2
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes" unique_id=338832362]
+[node name="Panel" type="PanelContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes" unique_id=1146623382]
 layout_mode = 0
 offset_right = 808.0
 offset_bottom = 575.0
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel" unique_id=1942502734]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel" unique_id=835136501]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1865828917]
+[node name="Label" type="Label" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=409675458]
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Notes"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1825714568]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=999596272]
 layout_mode = 2
 alignment = 1
 
-[node name="AddNote" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/HBoxContainer" unique_id=1195228075]
+[node name="AddNote" type="Button" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/HBoxContainer" unique_id=952867801]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Add Note"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1074394048]
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1495395321]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NotesBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/ScrollContainer" unique_id=1964491098]
+[node name="NotesBox" type="VBoxContainer" parent="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/ScrollContainer" unique_id=1471341271]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AbilityCreate" type="CenterContainer" parent="." unique_id=1828614637]
+[node name="AbilityCreate" type="CenterContainer" parent="CharacterMenu" unique_id=1723226580]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -439,33 +458,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameSelect" type="PanelContainer" parent="AbilityCreate" unique_id=1377439838]
+[node name="NameSelect" type="PanelContainer" parent="CharacterMenu/AbilityCreate" unique_id=1787388917]
 layout_mode = 2
-theme = ExtResource("2_4wqoi")
+theme = ExtResource("3_0id5j")
 
-[node name="MarginContainer" type="MarginContainer" parent="AbilityCreate/NameSelect" unique_id=613054203]
+[node name="MarginContainer" type="MarginContainer" parent="CharacterMenu/AbilityCreate/NameSelect" unique_id=2080470267]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilityCreate/NameSelect/MarginContainer" unique_id=1058204208]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/AbilityCreate/NameSelect/MarginContainer" unique_id=1246466353]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1868488610]
+[node name="Label" type="Label" parent="CharacterMenu/AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=188402914]
 layout_mode = 2
 text = "Enter Ability Name"
 
-[node name="AbilityNameLine" type="LineEdit" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1975141818]
+[node name="AbilityNameLine" type="LineEdit" parent="CharacterMenu/AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1209893671]
 layout_mode = 2
 
-[node name="AbilitySubmitName" type="Button" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1988449868]
+[node name="AbilitySubmitName" type="Button" parent="CharacterMenu/AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1599546310]
 layout_mode = 2
 theme = SubResource("Theme_41oo2")
 text = "Submit"
 
-[node name="ItemCreate" type="CenterContainer" parent="." unique_id=264686282]
+[node name="ItemCreate" type="CenterContainer" parent="CharacterMenu" unique_id=754774557]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -474,33 +493,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameSelect" type="PanelContainer" parent="ItemCreate" unique_id=433853580]
+[node name="NameSelect" type="PanelContainer" parent="CharacterMenu/ItemCreate" unique_id=1698159843]
 layout_mode = 2
-theme = ExtResource("2_4wqoi")
+theme = ExtResource("3_0id5j")
 
-[node name="MarginContainer" type="MarginContainer" parent="ItemCreate/NameSelect" unique_id=1708601942]
+[node name="MarginContainer" type="MarginContainer" parent="CharacterMenu/ItemCreate/NameSelect" unique_id=948351088]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ItemCreate/NameSelect/MarginContainer" unique_id=1582774433]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/ItemCreate/NameSelect/MarginContainer" unique_id=951360396]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=935032393]
+[node name="Label" type="Label" parent="CharacterMenu/ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1775701532]
 layout_mode = 2
 text = "Enter Ability Name"
 
-[node name="ItemNameLine" type="LineEdit" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=2051928135]
+[node name="ItemNameLine" type="LineEdit" parent="CharacterMenu/ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1345314176]
 layout_mode = 2
 
-[node name="ItemSubmitName" type="Button" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1642388691]
+[node name="ItemSubmitName" type="Button" parent="CharacterMenu/ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1336781873]
 layout_mode = 2
 theme = SubResource("Theme_41oo2")
 text = "Submit"
 
-[node name="NameChange" type="CenterContainer" parent="." unique_id=879785999]
+[node name="NameChange" type="CenterContainer" parent="CharacterMenu" unique_id=85304129]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -509,36 +528,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameSelect" type="PanelContainer" parent="NameChange" unique_id=1957173854]
+[node name="NameSelect" type="PanelContainer" parent="CharacterMenu/NameChange" unique_id=635434807]
 layout_mode = 2
-theme = ExtResource("2_4wqoi")
+theme = ExtResource("3_0id5j")
 
-[node name="MarginContainer" type="MarginContainer" parent="NameChange/NameSelect" unique_id=1328535190]
+[node name="MarginContainer" type="MarginContainer" parent="CharacterMenu/NameChange/NameSelect" unique_id=43277748]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NameChange/NameSelect/MarginContainer" unique_id=1674950568]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/NameChange/NameSelect/MarginContainer" unique_id=2098146648]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=655561354]
+[node name="Label" type="Label" parent="CharacterMenu/NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=1148311222]
 layout_mode = 2
 text = "Enter Character Name"
 
-[node name="NameLine" type="LineEdit" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=1668244254]
+[node name="NameLine" type="LineEdit" parent="CharacterMenu/NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=411223560]
 layout_mode = 2
 theme = SubResource("Theme_41oo2")
 placeholder_text = "Name"
 alignment = 1
 
-[node name="SubmitName" type="Button" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=796679933]
+[node name="SubmitName" type="Button" parent="CharacterMenu/NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=1726915994]
 layout_mode = 2
 theme = SubResource("Theme_41oo2")
 text = "Submit"
 
-[node name="ImageView" type="CenterContainer" parent="." unique_id=1831847543]
+[node name="ImageView" type="CenterContainer" parent="CharacterMenu" unique_id=658340038]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -547,45 +566,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="PanelContainer" parent="ImageView" unique_id=1218511913]
+[node name="Panel" type="PanelContainer" parent="CharacterMenu/ImageView" unique_id=405836186]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ImageView/Panel" unique_id=371219071]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMenu/ImageView/Panel" unique_id=67501927]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ImageView/Panel/VBoxContainer" unique_id=384566717]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMenu/ImageView/Panel/VBoxContainer" unique_id=603412821]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=796409063]
+[node name="Label" type="Label" parent="CharacterMenu/ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=1319375746]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 38
 text = "Image"
 horizontal_alignment = 1
 
-[node name="Close" type="Button" parent="ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=266144517]
+[node name="Close" type="Button" parent="CharacterMenu/ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=1045991269]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
 text = "X"
 
-[node name="ImageViewTexture" type="TextureRect" parent="ImageView/Panel/VBoxContainer" unique_id=1640987004]
-material = ExtResource("4_pvdot")
+[node name="ImageViewTexture" type="TextureRect" parent="CharacterMenu/ImageView/Panel/VBoxContainer" unique_id=1057435632]
+material = ExtResource("2_1nvvt")
 layout_mode = 2
 expand_mode = 5
 stretch_mode = 5
 
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="file_selected" from="GalleryFileDialog" to="." method="_on_gallery_file_dialog_file_selected"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Rename" to="." method="_on_rename_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ChangeImage" to="." method="_on_change_image_pressed"]
-[connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Pronouns" to="." method="_on_pronouns_text_changed"]
-[connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Race" to="." method="_on_race_text_changed"]
-[connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Description" to="." method="_on_description_text_changed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
-[connection signal="text_changed" from="AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine" to="." method="_on_ability_name_line_text_changed"]
-[connection signal="pressed" from="AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilitySubmitName" to="." method="_on_ability_submit_name_pressed"]
-[connection signal="text_changed" from="ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemNameLine" to="." method="_on_item_name_line_text_changed"]
-[connection signal="pressed" from="ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemSubmitName" to="." method="_on_item_submit_name_pressed"]
-[connection signal="pressed" from="NameChange/NameSelect/MarginContainer/VBoxContainer/SubmitName" to="." method="_on_submit_name_pressed"]
-[connection signal="pressed" from="ImageView/Panel/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[node name="Window" type="Window" parent="." unique_id=220195383]
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Popout"
+initial_position = 4
+size = Vector2i(1152, 648)
+popup_wm_hint = true
+content_scale_size = Vector2i(1152, 648)
+content_scale_mode = 2
+content_scale_aspect = 4
+accessibility_name = "Popout"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Window" unique_id=1784165358]
+
+[node name="CharacterMenu" parent="Window/CanvasLayer" unique_id=137672067 instance=ExtResource("9_hr1mk")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="file_selected" from="CharacterMenu/FileDialog" to="CharacterMenu" method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="CharacterMenu/GalleryFileDialog" to="CharacterMenu" method="_on_gallery_file_dialog_file_selected"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Rename" to="CharacterMenu" method="_on_rename_pressed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ChangeImage" to="CharacterMenu" method="_on_change_image_pressed"]
+[connection signal="text_changed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Pronouns" to="CharacterMenu" method="_on_pronouns_text_changed"]
+[connection signal="text_changed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Race" to="CharacterMenu" method="_on_race_text_changed"]
+[connection signal="text_changed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Description" to="CharacterMenu" method="_on_description_text_changed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/VBoxContainer/Save" to="CharacterMenu" method="_on_save_pressed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer/NewAbility" to="CharacterMenu" method="_on_new_ability_pressed"]
+[connection signal="value_changed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer/ManaSpinBox" to="CharacterMenu" method="_on_mana_spin_box_value_changed"]
+[connection signal="value_changed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer/MaxManaSpinBox" to="CharacterMenu" method="_on_max_mana_spin_box_value_changed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Items&Abilities/HBoxContainer/Items/VBoxContainer/HBoxContainer/NewItem" to="CharacterMenu" method="_on_new_item_pressed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/HBoxContainer/AddGalleryImage" to="CharacterMenu" method="_on_add_gallery_image_pressed"]
+[connection signal="pressed" from="CharacterMenu/MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/HBoxContainer/AddNote" to="CharacterMenu" method="_on_add_note_pressed"]
+[connection signal="text_changed" from="CharacterMenu/AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine" to="CharacterMenu" method="_on_ability_name_line_text_changed"]
+[connection signal="pressed" from="CharacterMenu/AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilitySubmitName" to="CharacterMenu" method="_on_ability_submit_name_pressed"]
+[connection signal="text_changed" from="CharacterMenu/ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemNameLine" to="CharacterMenu" method="_on_item_name_line_text_changed"]
+[connection signal="pressed" from="CharacterMenu/ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemSubmitName" to="CharacterMenu" method="_on_item_submit_name_pressed"]
+[connection signal="pressed" from="CharacterMenu/NameChange/NameSelect/MarginContainer/VBoxContainer/SubmitName" to="CharacterMenu" method="_on_submit_name_pressed"]
+[connection signal="pressed" from="CharacterMenu/ImageView/Panel/VBoxContainer/HBoxContainer/Close" to="CharacterMenu" method="_on_close_pressed"]

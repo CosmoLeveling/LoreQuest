@@ -1,27 +1,21 @@
 extends Control
-@onready var ability_box: VBoxContainer = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/ScrollContainer/AbilityBox
-@onready var item_box: VBoxContainer = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Items/VBoxContainer/ScrollContainer/ItemBox
-@onready var mana_spin_box: SpinBox = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer/ManaSpinBox
+@onready var ability_box: VBoxContainer = $"MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/ScrollContainer/AbilityBox"
+@onready var item_box: VBoxContainer = $"MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/ScrollContainer/ItemBox"
+@onready var mana_spin_box: SpinBox = $"MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer/ManaSpinBox"
 @onready var gallery_file_dialog: FileDialog = $GalleryFileDialog
 @onready var file_dialog: FileDialog = $FileDialog
 @onready var avatar: TextureRect = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Avatar
 @onready var name_label: Label = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Name
-@onready var max_mana_spin_box: SpinBox = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities/HBoxContainer/Abilities/VBoxContainer/HBoxContainer/MaxManaSpinBox
+@onready var max_mana_spin_box: SpinBox = $"MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer/MaxManaSpinBox"
 @onready var description: TextEdit = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Description
 @onready var race: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Race
 @onready var pronouns: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Pronouns
 @onready var name_change: CenterContainer = $NameChange
 @onready var name_line: LineEdit = $NameChange/NameSelect/MarginContainer/VBoxContainer/NameLine
-@onready var ability_item_button: Button = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/AbilityItemButton
-@onready var gallery_button: Button = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/GalleryButton
-@onready var items_abilities: Control = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Items_Abilities
-@onready var gallery: Control = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery
-@onready var gallery_grid: GridContainer = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer/GalleryGrid
+@onready var gallery_grid: GridContainer = $MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer/GalleryGrid
 @onready var image_view: CenterContainer = $ImageView
 @onready var image_view_texture: TextureRect = $ImageView/Panel/VBoxContainer/ImageViewTexture
-@onready var notes_button: Button = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/NotesButton
-@onready var notes: Control = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes
-@onready var notes_box: VBoxContainer = $MarginContainer/HBoxContainer/VBoxContainer2/Tabs/Notes/Panel/VBoxContainer/ScrollContainer/NotesBox
+@onready var notes_box: VBoxContainer = $MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/ScrollContainer/NotesBox
 const ABILITY_TEMPLATE = preload("uid://chufft44nwvjs")
 const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 const GALLERY_TEMPLATE = preload("uid://b8byq3d2opaqo")
@@ -33,47 +27,48 @@ var new_item_name:String
 @onready var ability_create: CenterContainer = $AbilityCreate
 @onready var item_create: CenterContainer = $ItemCreate
 func _ready() -> void:
-	var _temp:AvatarTemplate = AVATAR_TEMPLATE.instantiate()
-	_temp.image_path = character.image_path
-	gallery_grid.add_child(_temp)
-	_temp.open_image.connect(open_avatar_image)
-	for note in character.notes:
-		var temp:NoteTemplate = NOTE_TEMPLATE.instantiate()
-		temp.note = note
-		notes_box.add_child(temp)
-	for image in character.gallery_images:
-		var temp:GalleryTemplate = GALLERY_TEMPLATE.instantiate()
-		temp.image_path = image
-		gallery_grid.add_child(temp)
-		temp.open_image.connect(open_gallery_image)
-		temp.deleted.connect(remove_gallery_image)
-	for ability in character.abilities:
-		var temp = ABILITY_TEMPLATE.instantiate()
-		temp.ability = ability
-		ability_box.add_child(temp)
-		temp.abilityUsed.connect(use_ability)
-	for item in character.items:
-		var temp = ITEM_TEMPLATE.instantiate()
-		temp.item = item
-		item_box.add_child(temp)
-	name_label.text = character.name
-	var image:Image = Image.new()
+	if character:
+		var _temp:AvatarTemplate = AVATAR_TEMPLATE.instantiate()
+		_temp.image_path = character.image_path
+		gallery_grid.add_child(_temp)
+		_temp.open_image.connect(open_avatar_image)
+		for note in character.notes:
+			var temp:NoteTemplate = NOTE_TEMPLATE.instantiate()
+			temp.note = note
+			notes_box.add_child(temp)
+		for image in character.gallery_images:
+			var temp:GalleryTemplate = GALLERY_TEMPLATE.instantiate()
+			temp.image_path = image
+			gallery_grid.add_child(temp)
+			temp.open_image.connect(open_gallery_image)
+			temp.deleted.connect(remove_gallery_image)
+		for ability in character.abilities:
+			var temp = ABILITY_TEMPLATE.instantiate()
+			temp.ability = ability
+			ability_box.add_child(temp)
+			temp.abilityUsed.connect(use_ability)
+		for item in character.items:
+			var temp = ITEM_TEMPLATE.instantiate()
+			temp.item = item
+			item_box.add_child(temp)
+		name_label.text = character.name
+		var image:Image = Image.new()
+		
+		if FileAccess.file_exists(character.image_path):
+			image.load(character.image_path)
+			image = Global.center_crop(image)
+		else:
+			image = load("res://assets/default.png")
+		var image_texture = ImageTexture.new()
+		image_texture.set_image(image)
+		mana_spin_box.value = clampi(int(character.mana),0,character.max_mana)
+		mana_spin_box.max_value = 	clampi(int(character.max_mana),0,int(character.max_mana))
+		max_mana_spin_box.value = 	clampi(int(character.max_mana),0,int(character.max_mana))
+		description.text = character.description
+		pronouns.text = character.pronouns
+		race.text = character.race
+		avatar.texture = image_texture
 	
-	if FileAccess.file_exists(character.image_path):
-		image.load(character.image_path)
-		image = Global.center_crop(image)
-	else:
-		image = load("res://assets/default.png")
-	var image_texture = ImageTexture.new()
-	image_texture.set_image(image)
-	mana_spin_box.value = clampi(int(character.mana),0,character.max_mana)
-	mana_spin_box.max_value = clampi(int(character.max_mana),0,int(character.max_mana))
-	max_mana_spin_box.value = clampi(int(character.max_mana),0,int(character.max_mana))
-	description.text = character.description
-	pronouns.text = character.pronouns
-	race.text = character.race
-	avatar.texture = image_texture
-
 func use_ability(value:int,_ability) -> void:
 	if value<=character.mana:
 		character.mana -= clampi(int(value),0,character.max_mana)
@@ -210,30 +205,6 @@ func open_avatar_image(path:String):
 
 func _on_close_pressed() -> void:
 	image_view.hide()
-
-func _on_ability_item_button_pressed() -> void:
-	ability_item_button.disabled = true
-	notes_button.disabled = false
-	gallery_button.disabled = false
-	items_abilities.show()
-	gallery.hide()
-	notes.hide()
-
-func _on_gallery_button_pressed() -> void:
-	ability_item_button.disabled = false
-	notes_button.disabled = false
-	gallery_button.disabled = true
-	items_abilities.hide()
-	gallery.show()
-	notes.hide()
-func _on_notes_button_pressed() -> void:
-	ability_item_button.disabled = false
-	notes_button.disabled = true
-	gallery_button.disabled = false
-	items_abilities.hide()
-	gallery.hide()
-	notes.show()
-
 
 func _on_add_note_pressed() -> void:
 	var note:Note = Note.new()

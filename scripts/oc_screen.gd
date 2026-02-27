@@ -22,16 +22,12 @@ var new_image:String
 #region OnReadys
 @onready var windows: Control = $Windows
 @onready var title: Label = $MarginContainer/VBoxContainer/HBoxContainer2/Title
-@onready var character_grid: GridContainer = $MarginContainer/VBoxContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CenterContainer/CharacterGrid
+@onready var character_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid
 @onready var themes_button: OptionButton = $MarginContainer/VBoxContainer/HBoxContainer/ThemesButton
 
-@onready var world_grid: GridContainer = $MarginContainer/VBoxContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer/WorldGrid
-@onready var characters_button: Button = $MarginContainer/VBoxContainer/HBoxContainer3/CharactersButton
-@onready var worlds_button: Button = $MarginContainer/VBoxContainer/HBoxContainer3/WorldsButton
-@onready var characters_menu: Control = $MarginContainer/VBoxContainer/CharactersMenu
-@onready var worlds_menu: Control = $MarginContainer/VBoxContainer/WorldsMenu
+@onready var world_grid: GridContainer = $MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer/WorldGrid
 
-@onready var amount: Label = $MarginContainer/VBoxContainer/CharactersMenu/VBoxContainer2/Amount
+@onready var amount: Label = $MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/Amount
 
 #region Character Creation
 @onready var image_text: TextureRect = $CharacterCreate/ImageSelect/MarginContainer/VBoxContainer/Image
@@ -111,6 +107,9 @@ func open_character(character:Character):
 	if not character.open:
 		character.open = true
 		var window = Window.new()
+		window.content_scale_size = get_viewport_rect().size
+		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
+		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = CHARACTER_MENU.instantiate()
 		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
 		menu.character = character
@@ -142,6 +141,9 @@ func open_world(world:World):
 	if not world.open:
 		world.open = true
 		var window = Window.new()
+		window.content_scale_size = get_viewport_rect().size
+		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
+		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = WORLD_MENU.instantiate()
 		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
 		menu.world = world
@@ -371,22 +373,6 @@ func _save_worlds():
 
 #endregion
 
-#region Tabs
-func _on_characters_pressed() -> void:
-	characters_button.disabled = true
-	worlds_button.disabled = false
-	characters_menu.show()
-	worlds_menu.hide()
-	title.text = "Characters"
-
-func _on_worlds_pressed() -> void:
-	characters_button.disabled = false
-	worlds_button.disabled = true
-	characters_menu.hide()
-	worlds_menu.show()
-	title.text = "Worlds"
-#endregion
-
 func _exit_tree() -> void:
 	start_save_thread()
 	thread.wait_to_finish()
@@ -400,6 +386,9 @@ func _on_backups_pressed() -> void:
 	if not backups_open:
 		backups_open=true
 		var window = Window.new()
+		window.content_scale_size = get_viewport_rect().size
+		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
+		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = BACKUPS_MENU.instantiate()
 		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
 		windows.add_child(window)

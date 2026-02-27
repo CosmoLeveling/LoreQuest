@@ -141,6 +141,29 @@ load_path = "res://.godot/imported/arrows.png-7c499e0062a0320773cede52bae7b203.c
 atlas = SubResource("CompressedTexture2D_r02qm")
 region = Rect2(0, 26, 12, 8)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etupa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luy55"]
+texture = ExtResource("3_n0pxi")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0pxi"]
+texture = ExtResource("2_luy55")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nb43s"]
+texture = ExtResource("4_nb43s")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04tpv"]
 texture = ExtResource("2_luy55")
 texture_margin_left = 5.0
@@ -248,6 +271,18 @@ SpinBox/icons/up = SubResource("AtlasTexture_coank")
 SpinBox/icons/up_disabled = SubResource("AtlasTexture_0adpi")
 SpinBox/icons/up_hover = SubResource("AtlasTexture_2q2sh")
 SpinBox/icons/up_pressed = SubResource("AtlasTexture_q48ue")
+TabBar/colors/font_selected_color = Color(0.61960787, 0.45490196, 0.3647059, 1)
+TabBar/colors/font_unselected_color = Color(0.61960787, 0.45490196, 0.3647059, 0.827451)
+TabBar/styles/tab_focus = SubResource("StyleBoxTexture_v7sb4")
+TabBar/styles/tab_selected = SubResource("StyleBoxTexture_v7sb4")
+TabBar/styles/tab_unselected = SubResource("StyleBoxTexture_v7sb4")
+TabContainer/colors/font_selected_color = Color(0.61960787, 0.45490196, 0.3647059, 1)
+TabContainer/colors/font_unselected_color = Color(0.61960787, 0.45490196, 0.3647059, 0.78039217)
+TabContainer/fonts/font = ExtResource("1_etupa")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_etupa")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_luy55")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_n0pxi")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_nb43s")
 TextEdit/colors/caret_color = Color(0.61960787, 0.45490196, 0.3647059, 1)
 TextEdit/colors/font_color = Color(0.61960787, 0.45490196, 0.3647059, 1)
 TextEdit/colors/font_placeholder_color = Color(0.61960787, 0.45490196, 0.3647059, 0.6)

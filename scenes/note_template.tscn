@@ -29,6 +29,7 @@ layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Description"
 wrap_mode = 1
+scroll_fit_content_height = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1107342082]
 layout_mode = 2
