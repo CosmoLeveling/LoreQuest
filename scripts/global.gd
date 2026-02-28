@@ -1,4 +1,7 @@
 extends Node
+
+var abilities:Dictionary[String,Ability]
+var items:Dictionary[String,Item]
 func center_crop(image:Image)->Image:
 	var new_image = Image.new()
 	var new_size = image.get_height()

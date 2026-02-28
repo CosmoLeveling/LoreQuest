@@ -12,10 +12,22 @@ extends Control
 @onready var pronouns: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Pronouns
 @onready var name_change: CenterContainer = $NameChange
 @onready var name_line: LineEdit = $NameChange/NameSelect/MarginContainer/VBoxContainer/NameLine
+@onready var ability_choose_grid: FlowContainer = $AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid
 @onready var gallery_grid: GridContainer = $MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer/GalleryGrid
 @onready var image_view: CenterContainer = $ImageView
 @onready var image_view_texture: TextureRect = $ImageView/Panel/VBoxContainer/ImageViewTexture
 @onready var notes_box: VBoxContainer = $MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/ScrollContainer/NotesBox
+@onready var ability_choose: CenterContainer = $AbilityChoose
+@onready var search_abilities: LineEdit = $AbilityChoose/Panel/VBoxContainer/SearchAbilities
+const ITEM_CHOOSE_TEMPLATE = preload("uid://dae1ixfharnwh")
+
+@onready var item_choose_grid: FlowContainer = $ItemChoose/Panel/VBoxContainer/ScrollContainer/ItemChooseGrid
+@onready var search_items: LineEdit = $ItemChoose/Panel/VBoxContainer/SearchItems
+@onready var item_choose: CenterContainer = $ItemChoose
+
+
+
+const ABILITY_CHOOSE_TEMPLATE = preload("uid://c3kgmdmfl0h87")
 const ABILITY_TEMPLATE = preload("uid://chufft44nwvjs")
 const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 const GALLERY_TEMPLATE = preload("uid://b8byq3d2opaqo")
@@ -42,15 +54,8 @@ func _ready() -> void:
 			gallery_grid.add_child(temp)
 			temp.open_image.connect(open_gallery_image)
 			temp.deleted.connect(remove_gallery_image)
-		for ability in character.abilities:
-			var temp = ABILITY_TEMPLATE.instantiate()
-			temp.ability = ability
-			ability_box.add_child(temp)
-			temp.abilityUsed.connect(use_ability)
-		for item in character.items:
-			var temp = ITEM_TEMPLATE.instantiate()
-			temp.item = item
-			item_box.add_child(temp)
+		refresh_abilities()
+		refresh_items()
 		name_label.text = character.name
 		var image:Image = Image.new()
 		
@@ -68,7 +73,40 @@ func _ready() -> void:
 		pronouns.text = character.pronouns
 		race.text = character.race
 		avatar.texture = image_texture
-	
+
+func refresh_abilities():
+	for c in ability_box.get_children():
+		c.queue_free()
+	for ability in character.ability_ids:
+			if Global.abilities.has(ability):
+				var temp:AbilityTemplate = ABILITY_TEMPLATE.instantiate()
+				temp.ability_id = ability
+				ability_box.add_child(temp)
+				temp.abilityUsed.connect(use_ability)
+				temp.delete.connect(delete_ability)
+			else:
+				character.ability_ids.erase(ability)
+
+func delete_ability(ability_id):
+	character.ability_ids.erase(ability_id)
+	get_tree().current_scene.start_save_thread()
+
+func refresh_items():
+	for c in item_box.get_children():
+		c.queue_free()
+	for item in character.item_ids:
+			if Global.items.has(item):
+				var temp:ItemTemplate = ITEM_TEMPLATE.instantiate()
+				temp.item_id = item
+				item_box.add_child(temp)
+				temp.delete.connect(delete_item)
+			else:
+				character.item_ids.erase(item)
+
+func delete_item(item_id):
+	character.item_ids.erase(item_id)
+	get_tree().current_scene.start_save_thread()
+
 func use_ability(value:int,_ability) -> void:
 	if value<=character.mana:
 		character.mana -= clampi(int(value),0,character.max_mana)
@@ -83,8 +121,6 @@ func _on_max_mana_spin_box_value_changed(value: float) -> void:
 	character.mana = clampi(int(character.mana),0,character.max_mana)
 	mana_spin_box.value = clampi(int(character.mana),0,character.max_mana)
 	mana_spin_box.max_value = clampi(int(value),0,int(value))
-
-
 
 func _on_change_image_pressed() -> void:
 	file_dialog.popup()
@@ -126,11 +162,9 @@ func _on_ability_name_line_text_changed(new_text: String) -> void:
 func _on_ability_submit_name_pressed() -> void:
 	var ability = Ability.new()
 	ability.name = new_ability_name
-	character.abilities.append(ability)
-	var temp = ABILITY_TEMPLATE.instantiate()
-	temp.ability = ability
-	ability_box.add_child(temp)
-	temp.abilityUsed.connect(use_ability)
+	character.ability_ids.append(Global.abilities.size())
+	Global.abilities.set(new_ability_name,ability)
+	refresh_abilities()
 	ability_create.hide()
 
 
@@ -212,3 +246,62 @@ func _on_add_note_pressed() -> void:
 	var new_note:NoteTemplate = NOTE_TEMPLATE.instantiate()
 	new_note.note = note
 	notes_box.add_child(new_note)
+
+
+func _on_choose_ability_pressed() -> void:
+	refresh_choose_abilities()
+	ability_choose.show()
+
+func choose_new_ability(ability_id):
+	character.ability_ids.append(ability_id)
+	refresh_abilities()
+	ability_choose.hide()
+
+func _on_close_ability_choose_pressed() -> void:
+	ability_choose.hide()
+
+
+func _on_search_text_changed(_new_text: String) -> void:
+	refresh_choose_abilities()
+
+func refresh_choose_abilities():
+	for c in ability_choose_grid.get_children():
+		c.queue_free()
+	for a:String in Global.abilities.keys():
+		if search_abilities.text.to_lower()==""||a.to_lower().contains(search_abilities.text.to_lower()):
+			if character.ability_ids.has(a):
+				continue
+			var new_choose_ability:AbilityChooseTemplate= ABILITY_CHOOSE_TEMPLATE.instantiate()
+			new_choose_ability.ability_id = a
+			new_choose_ability.choose.connect(choose_new_ability)
+			ability_choose_grid.add_child(new_choose_ability)
+
+
+func _on_choose_item_pressed() -> void:
+	refresh_choose_items()
+	item_choose.show()
+
+
+func choose_new_item(item_id):
+	character.item_ids.append(item_id)
+	refresh_items()
+	item_choose.hide()
+
+func _on_close_item_choose_pressed() -> void:
+	item_choose.hide()
+
+
+func _on_search_items_text_changed(_new_text: String) -> void:
+	refresh_choose_items()
+
+func refresh_choose_items():
+	for c in item_choose_grid.get_children():
+		c.queue_free()
+	for i:String in Global.items.keys():
+		if search_items.text.to_lower()==""||i.to_lower().contains(search_items.text.to_lower()):
+			if character.item_ids.has(i):
+				continue
+			var new_choose_item:ItemChooseTemplate= ITEM_CHOOSE_TEMPLATE.instantiate()
+			new_choose_item.item_id = i
+			new_choose_item.choose.connect(choose_new_item)
+			item_choose_grid.add_child(new_choose_item)

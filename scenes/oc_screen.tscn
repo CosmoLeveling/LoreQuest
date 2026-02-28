@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dhee4wvahq1f6" path="res://scenes/world_template.tscn" id="5_txtb5"]
 [ext_resource type="Texture2D" uid="uid://id44hxhpp522" path="res://assets/ui/button_normal.png" id="6_7gs3l"]
 [ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://assets/ui/button_hovered.png" id="7_44nfd"]
+[ext_resource type="PackedScene" uid="uid://demp65srmd3xs" path="res://scenes/item_template.tscn" id="7_icr2n"]
 [ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://assets/ui/button_pressed.png" id="8_icr2n"]
 [ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://assets/ui/scroll.png" id="9_bvpb1"]
 
@@ -236,14 +237,15 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
-[node name="CharactersMenu" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=600234319]
+[node name="Characters" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=600234319]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu" unique_id=1235229442]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Characters" unique_id=1235229442]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,67 +253,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2" unique_id=692076576]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2" unique_id=692076576]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/HBoxContainer" unique_id=1548757817]
+[node name="NewCharacter" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/HBoxContainer" unique_id=1548757817]
 layout_mode = 2
 text = "New Character"
 
-[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2" unique_id=271674167]
+[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2" unique_id=271674167]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Current Amount: 0"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2" unique_id=950595759]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2" unique_id=950595759]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer" unique_id=464529859]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer" unique_id=464529859]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer" unique_id=325491531]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer" unique_id=325491531]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CharacterGrid" type="FlowContainer" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer" unique_id=2116384150]
+[node name="CharacterGrid" type="FlowContainer" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer" unique_id=2116384150]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="CharacterTemplate" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=302619555 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=302619555 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate2" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=2100072904 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate2" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=2100072904 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate3" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1882451524 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate3" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1882451524 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate4" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1502048659 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate4" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1502048659 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate5" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=2000501028 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate5" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=2000501028 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate6" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1675137828 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate6" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1675137828 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate7" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1724059464 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate7" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=1724059464 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="CharacterTemplate8" parent="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=284816900 instance=ExtResource("1_5pmnk")]
+[node name="CharacterTemplate8" parent="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid" unique_id=284816900 instance=ExtResource("1_5pmnk")]
 layout_mode = 2
 
-[node name="WorldsMenu" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1985090586]
+[node name="Worlds" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=1985090586]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu" unique_id=936575454]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Worlds" unique_id=936575454]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -321,31 +323,128 @@ grow_vertical = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer" unique_id=1891869906]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer" unique_id=1891869906]
 layout_mode = 2
 alignment = 1
 
-[node name="NewWorld" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/HBoxContainer" unique_id=1424609693]
+[node name="NewWorld" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/HBoxContainer" unique_id=1424609693]
 layout_mode = 2
 text = "New World"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer" unique_id=616547030]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer" unique_id=616547030]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer" unique_id=172810407]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer" unique_id=172810407]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/ScrollContainer" unique_id=2123390153]
+[node name="WorldGrid" type="FlowContainer" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/ScrollContainer" unique_id=246609558]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="WorldGrid" type="GridContainer" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer" unique_id=275069678]
+[node name="WorldTemplate" parent="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/ScrollContainer/WorldGrid" unique_id=1618266154 instance=ExtResource("5_txtb5")]
 layout_mode = 2
-columns = 4
 
-[node name="WorldTemplate" parent="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer/WorldGrid" unique_id=1618266154 instance=ExtResource("5_txtb5")]
+[node name="Libraries" type="Control" parent="MarginContainer/VBoxContainer/TabContainer" unique_id=42533804]
 layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Libraries" unique_id=712824003]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries" unique_id=1892407741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Items" type="Control" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer" unique_id=2108510227]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items" unique_id=643632419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer" unique_id=2089024289]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer" unique_id=643647856]
+layout_mode = 2
+alignment = 1
+
+[node name="NewItem" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer/HBoxContainer" unique_id=1939418268]
+layout_mode = 2
+text = "New Item"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer" unique_id=1176442346]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer" unique_id=1578543123]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemGrid" type="FlowContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer/ScrollContainer" unique_id=1524182497]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ItemTemplate" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer/ScrollContainer/ItemGrid" unique_id=152856914 instance=ExtResource("7_icr2n")]
+layout_mode = 2
+
+[node name="Abilities" type="Control" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer" unique_id=1293143685]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities" unique_id=108136439]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer" unique_id=2009338466]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer" unique_id=832789827]
+layout_mode = 2
+alignment = 1
+
+[node name="NewAbility" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer/HBoxContainer" unique_id=1691127246]
+layout_mode = 2
+text = "New Ability
+"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer" unique_id=485851895]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer" unique_id=1641341993]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AbilityGrid" type="FlowContainer" parent="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer/ScrollContainer" unique_id=2053616853]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
 
 [node name="CharacterCreate" type="CenterContainer" parent="." unique_id=628504157]
 visible = false
@@ -521,6 +620,82 @@ layout_mode = 2
 theme = SubResource("Theme_41oo2")
 text = "Submit"
 
+[node name="AbilityCreate" type="CenterContainer" parent="." unique_id=2031460791]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameSelect" type="PanelContainer" parent="AbilityCreate" unique_id=1421789578]
+layout_mode = 2
+theme = ExtResource("4_3nmfk")
+
+[node name="MarginContainer" type="MarginContainer" parent="AbilityCreate/NameSelect" unique_id=915876799]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilityCreate/NameSelect/MarginContainer" unique_id=2037876793]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1450324833]
+layout_mode = 2
+text = "Enter Ability Name"
+
+[node name="AbilityNameLine" type="LineEdit" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=440297573]
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="SubmitName" type="Button" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1197180183]
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+text = "Submit"
+
+[node name="ItemCreate" type="CenterContainer" parent="." unique_id=663716021]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameSelect" type="PanelContainer" parent="ItemCreate" unique_id=222428719]
+layout_mode = 2
+theme = ExtResource("4_3nmfk")
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemCreate/NameSelect" unique_id=1687936316]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemCreate/NameSelect/MarginContainer" unique_id=1458890523]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=118273799]
+layout_mode = 2
+text = "Enter Ability Name"
+
+[node name="ItemNameLine" type="LineEdit" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=511078943]
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="SubmitItemName" type="Button" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1366049250]
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+text = "Submit"
+
 [node name="Windows" type="Control" parent="." unique_id=8665666]
 anchors_preset = 0
 offset_right = 40.0
@@ -531,11 +706,16 @@ offset_bottom = 40.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Backups" to="." method="_on_backups_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SavesFolder" to="." method="_on_saves_folder_pressed"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/HBoxContainer/ThemesButton" to="." method="_on_themes_button_item_selected"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/HBoxContainer/NewWorld" to="." method="_on_world_create_pressed"]
+[connection signal="tab_changed" from="MarginContainer/VBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/HBoxContainer/NewCharacter" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/HBoxContainer/NewWorld" to="." method="_on_world_create_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer/HBoxContainer/NewItem" to="." method="_on_new_item_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer/HBoxContainer/NewAbility" to="." method="_on_new_ability_pressed"]
 [connection signal="pressed" from="CharacterCreate/NameSelect/MarginContainer/VBoxContainer/SubmitName" to="." method="_on_submit_name_pressed"]
 [connection signal="pressed" from="CharacterCreate/ImageSelect/MarginContainer/VBoxContainer/ChooseImage" to="." method="_on_choose_image_pressed"]
 [connection signal="pressed" from="CharacterCreate/ImageSelect/MarginContainer/VBoxContainer/SubmitImage" to="." method="_on_submit_image_pressed"]
 [connection signal="pressed" from="WorldCreate/WorldNameSelect/MarginContainer/VBoxContainer/WorldSubmitName" to="." method="_on_world_submit_name_pressed"]
 [connection signal="pressed" from="WorldCreate/WorldImageSelect/MarginContainer/VBoxContainer/WorldChooseImage" to="." method="_on_choose_image_pressed"]
 [connection signal="pressed" from="WorldCreate/WorldImageSelect/MarginContainer/VBoxContainer/WorldSubmitImage" to="." method="_on_world_submit_image_pressed"]
+[connection signal="pressed" from="AbilityCreate/NameSelect/MarginContainer/VBoxContainer/SubmitName" to="." method="_on_submit_ability_name_pressed"]
+[connection signal="pressed" from="ItemCreate/NameSelect/MarginContainer/VBoxContainer/SubmitItemName" to="." method="_on_submit_item_name_pressed"]

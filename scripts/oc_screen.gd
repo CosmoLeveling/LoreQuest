@@ -7,6 +7,7 @@ const CHARACTER_TEMPLATE = preload("uid://c1ef73xwn2auw")
 const CHARACTER_MENU = preload("uid://d1klvxp06pdqr")
 const WORLD_MENU = preload("uid://bixurgfj88yg3")
 const WORLD_TEMPLATE = preload("uid://dhee4wvahq1f6")
+const ABILITY_TEMPLATE = preload("uid://chufft44nwvjs")
 const save_dir = "user://saves"
 const backups_dir = "user://backups"
 var characters: Array[Character] = [
@@ -18,16 +19,18 @@ var new_name:String
 var new_image:String
 #region Exports
 #endregion
+const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
+@onready var item_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Items/VBoxContainer/ScrollContainer/ItemGrid
 
 #region OnReadys
 @onready var windows: Control = $Windows
 @onready var title: Label = $MarginContainer/VBoxContainer/HBoxContainer2/Title
-@onready var character_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid
+@onready var character_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/VBoxContainer/ScrollContainer/CharacterGrid
 @onready var themes_button: OptionButton = $MarginContainer/VBoxContainer/HBoxContainer/ThemesButton
 
-@onready var world_grid: GridContainer = $MarginContainer/VBoxContainer/TabContainer/WorldsMenu/VBoxContainer/ScrollContainer/CenterContainer/WorldGrid
+@onready var world_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/ScrollContainer/WorldGrid
 
-@onready var amount: Label = $MarginContainer/VBoxContainer/TabContainer/CharactersMenu/VBoxContainer2/Amount
+@onready var amount: Label = $MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/Amount
 
 #region Character Creation
 @onready var image_text: TextureRect = $CharacterCreate/ImageSelect/MarginContainer/VBoxContainer/Image
@@ -36,6 +39,9 @@ var new_image:String
 @onready var image_select: PanelContainer = $CharacterCreate/ImageSelect
 @onready var character_create: CenterContainer = $CharacterCreate
 #endregion
+@onready var ability_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/Libraries/TabContainer/Abilities/VBoxContainer/ScrollContainer/AbilityGrid
+@onready var item_name_line: LineEdit = $ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemNameLine
+@onready var item_create: CenterContainer = $ItemCreate
 
 #region world Creation
 @onready var world_image_text: TextureRect = $WorldCreate/WorldImageSelect/MarginContainer/VBoxContainer/WorldImageText
@@ -44,6 +50,9 @@ var new_image:String
 @onready var world_image_select: PanelContainer = $WorldCreate/WorldImageSelect
 @onready var world_create: CenterContainer = $WorldCreate
 #endregion
+@onready var tab_container: TabContainer = $MarginContainer/VBoxContainer/TabContainer
+@onready var ability_create: CenterContainer = $AbilityCreate
+@onready var ability_name_line: LineEdit = $AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine
 
 #endregion
 
@@ -60,12 +69,31 @@ func _ready() -> void:
 	await load_save()
 	if not DirAccess.dir_exists_absolute(save_dir):
 		DirAccess.make_dir_absolute(save_dir)
+
 	if not DirAccess.dir_exists_absolute(backups_dir):
 		DirAccess.make_dir_absolute(backups_dir)
 	_reload_characters()
-	
 	_reload_worlds()
+	_reload_abilities()
+	_reload_items()
 
+func _reload_abilities():
+	for c in ability_grid.get_children():
+		c.queue_free()
+	for a:String in Global.abilities.keys():
+		var ability:AbilityTemplate = ABILITY_TEMPLATE.instantiate()
+		ability.ability_id = a
+		ability_grid.add_child(ability)
+		ability.delete.connect(delete_ability)
+		ability.ability_use_button.disabled = true
+func _reload_items():
+	for c in item_grid.get_children():
+		c.queue_free()
+	for i:String in Global.items.keys():
+		var item:ItemTemplate = ITEM_TEMPLATE.instantiate()
+		item.item_id = i
+		item_grid.add_child(item)
+		item.delete.connect(delete_item)
 #region Backup
 func _on_backup_pressed() -> void:
 	save()
@@ -241,17 +269,22 @@ func start_save_thread():
 	thread.start(save)
 
 func load_save():
+	_load_items()
+	_load_abilities()
 	_load_settings()
 	_load_characters()
 	_load_worlds()
 
 func _load_settings() -> void:
-	if not FileAccess.file_exists(save_dir + "/settings.save"):
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir + "/"+addon+"settings.save"):
 		return # Error! We don't have a save to load.
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
-	var save_file = FileAccess.open(save_dir+"/settings.save", FileAccess.READ)
+	var save_file = FileAccess.open(save_dir+"/"+addon+"settings.save", FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
 		var json_string = save_file.get_line()
 
@@ -274,15 +307,72 @@ func _load_settings() -> void:
 					themes_button.select(i)
 			get_tree().root.theme = themes[option]
 
+func _load_abilities() -> void:
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir + "/"+addon+"abilities.save"):
+		return # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	var save_file = FileAccess.open(save_dir+"/"+addon+"abilities.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+
+		# Creates the helper class to interact with JSON.
+		var json = JSON.new()
+
+		# Check if there is any error while parsing the JSON string, skip in case of failure.
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+
+		# Get the data from the JSON object.
+		var node_data:Dictionary = json.data
+		var ability:Ability = Ability.from_data(node_data)
+		Global.abilities.set(ability.name,ability)
+
+func _load_items() -> void:
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir + "/"+addon+"items.save"):
+		return # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	var save_file = FileAccess.open(save_dir+"/"+addon+"items.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+
+		# Creates the helper class to interact with JSON.
+		var json = JSON.new()
+
+		# Check if there is any error while parsing the JSON string, skip in case of failure.
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+
+		# Get the data from the JSON object.
+		var node_data:Dictionary = json.data
+		var item:Item = Item.from_data(node_data)
+		Global.items.set(item.name,item)
+
 func _load_characters() -> void:
-	if not FileAccess.file_exists(save_dir + "/characters.save"):
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir + "/"+addon+"characters.save"):
 		return # Error! We don't have a save to load.
 
 	characters.clear()
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
-	var save_file = FileAccess.open(save_dir+"/characters.save", FileAccess.READ)
+	var save_file = FileAccess.open(save_dir+"/"+addon+"characters.save", FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
 		var json_string = save_file.get_line()
 
@@ -302,14 +392,17 @@ func _load_characters() -> void:
 		characters.append(character)
 
 func _load_worlds() -> void:
-	if not FileAccess.file_exists(save_dir+"/worlds.save"):
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir+"/"+addon+"worlds.save"):
 		return # Error! We don't have a save to load.
 
 	worlds.clear()
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
-	var save_file = FileAccess.open(save_dir+"/worlds.save", FileAccess.READ)
+	var save_file = FileAccess.open(save_dir+"/"+addon+"worlds.save", FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
 		var json_string = save_file.get_line()
 
@@ -329,20 +422,46 @@ func _load_worlds() -> void:
 		worlds.append(world)
 
 func save():
+	_save_items()
+	_save_abilities()
 	_save_settings()
 	_save_characters()
 	_save_worlds()
 
 func _save_settings():
-	var save_file = FileAccess.open(save_dir+"/settings.save",FileAccess.WRITE)
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_file = FileAccess.open(save_dir+"/"+addon+"settings.save",FileAccess.WRITE)
 	var data:Dictionary = {
 		"theme":themes_button.get_item_text(themes_button.get_item_index(themes_button.get_selected_id()))
 	}
 	var json_string = JSON.stringify(data)
 	save_file.store_line(json_string)
 
+func _save_abilities():
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_file = FileAccess.open(save_dir+"/"+addon+"abilities.save",FileAccess.WRITE)
+	for ability in Global.abilities.values():
+		var json_string = JSON.stringify(ability.save())
+		save_file.store_line(json_string)
+
+func _save_items():
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_file = FileAccess.open(save_dir+"/"+addon+"items.save",FileAccess.WRITE)
+	for item in Global.items.values():
+		var json_string = JSON.stringify(item.save())
+		save_file.store_line(json_string)
+
 func _save_characters():
-	var save_file = FileAccess.open(save_dir+"/characters.save",FileAccess.WRITE)
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_file = FileAccess.open(save_dir+"/"+addon+"characters.save",FileAccess.WRITE)
 	for c:Character in characters:
 		# Check the node has a save function.
 		if !c.has_method("save"):
@@ -357,7 +476,10 @@ func _save_characters():
 		save_file.store_line(json_string)
 	amount.set_deferred("text", "Current Amount: "+str(characters.size()))
 func _save_worlds():
-	var save_file = FileAccess.open(save_dir+"/worlds.save",FileAccess.WRITE)
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_file = FileAccess.open(save_dir+"/"+addon+"worlds.save",FileAccess.WRITE)
 	for c:World in worlds:
 		# Check the node has a save function.
 		if !c.has_method("save"):
@@ -365,7 +487,7 @@ func _save_worlds():
 			continue
 		# Call the node's save function.
 		var world_data:Dictionary = c.call("save")
-		
+
 		# JSON provides a static method to serialized JSON string.
 		var json_string = JSON.stringify(world_data)
 		# Store the save dictionary as a new line in the save file.
@@ -399,3 +521,42 @@ func _on_backups_pressed() -> void:
 func _on_themes_button_item_selected(index: int) -> void:
 	var option:String  = themes_button.get_item_text(index)
 	get_tree().root.theme = themes[option]
+
+
+func _on_tab_container_tab_changed(tab: int) -> void:
+	if tab_container:
+		_reload_abilities()
+		_reload_items()
+		_reload_worlds()
+		_reload_characters()
+		title.text = tab_container.get_tab_control(tab).name
+
+
+func _on_new_ability_pressed() -> void:
+	ability_create.show()
+
+
+func _on_submit_ability_name_pressed() -> void:
+	var new_ability = Ability.new()
+	new_ability.name = ability_name_line.text
+	Global.abilities.set(new_ability.name,new_ability)
+	ability_create.hide()
+	_reload_abilities()
+	start_save_thread()
+
+func delete_ability(ability_id):
+	Global.abilities.erase(ability_id)
+
+func _on_new_item_pressed() -> void:
+	item_create.show()
+
+func _on_submit_item_name_pressed() -> void:
+	var new_item = Item.new()
+	new_item.name = item_name_line.text
+	Global.items.set(new_item.name,new_item)
+	item_create.hide()
+	_reload_items()
+	start_save_thread()
+
+func delete_item(item_id):
+	Global.items.erase(item_id)

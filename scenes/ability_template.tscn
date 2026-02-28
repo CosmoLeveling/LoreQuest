@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://3kta4qoe728n" path="res://scripts/ability_template.gd" id="2_esyi5"]
 
 [node name="AbilityTemplate" type="PanelContainer" unique_id=152856914]
-offset_right = 170.0
-offset_bottom = 90.0
+offset_right = 238.0
+offset_bottom = 243.0
 script = ExtResource("2_esyi5")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2066118148]
@@ -46,7 +46,7 @@ scroll_fit_content_height = true
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1000433602]
+[node name="AbilityUseButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1000433602]
 layout_mode = 2
 text = "Use"
 
@@ -62,5 +62,5 @@ allow_greater = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Trash" to="." method="_on_trash_pressed"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/AbilityUseButton" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]

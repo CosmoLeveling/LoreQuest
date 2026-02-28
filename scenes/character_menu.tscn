@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://assets/ui/button_hovered.png" id="6_e4rlm"]
 [ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://assets/ui/button_pressed.png" id="7_2ppc3"]
 [ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://assets/ui/scroll.png" id="8_sstho"]
+[ext_resource type="PackedScene" uid="uid://c3kgmdmfl0h87" path="res://scenes/ability_choose_template.tscn" id="9_tti22"]
 
-[sub_resource type="Image" id="Image_l2xjd"]
+[sub_resource type="Image" id="Image_tti22"]
 data = {
 "data": PackedByteArray(20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255),
 "format": "RGBA8",
@@ -19,7 +20,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_pvdot"]
-image = SubResource("Image_l2xjd")
+image = SubResource("Image_tti22")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72rxd"]
 texture = ExtResource("5_tti22")
@@ -273,13 +274,21 @@ theme_override_font_sizes/font_size = 38
 text = "Abilities"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=1274356102]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=249493482]
 layout_mode = 2
 alignment = 1
 
-[node name="NewAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=1987300254]
+[node name="NewAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2" unique_id=1987300254]
 layout_mode = 2
 text = "ADD"
+
+[node name="ChooseAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2" unique_id=67029309]
+layout_mode = 2
+text = "Choose From Library"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=1274356102]
+layout_mode = 2
+alignment = 1
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=840845980]
 custom_minimum_size = Vector2(10.45, 0)
@@ -341,6 +350,10 @@ alignment = 1
 [node name="NewItem" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer" unique_id=1955209751]
 layout_mode = 2
 text = "ADD"
+
+[node name="ChooseItem" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer" unique_id=872673524]
+layout_mode = 2
+text = "Choose From Library"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=502332282]
 layout_mode = 2
@@ -575,6 +588,122 @@ layout_mode = 2
 expand_mode = 5
 stretch_mode = 5
 
+[node name="AbilityChoose" type="CenterContainer" parent="." unique_id=627195702]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="AbilityChoose" unique_id=1031402165]
+custom_minimum_size = Vector2(462.025, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilityChoose/Panel" unique_id=928704408]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AbilityChoose/Panel/VBoxContainer" unique_id=336188779]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AbilityChoose/Panel/VBoxContainer/HBoxContainer" unique_id=572488563]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Abilities"
+horizontal_alignment = 1
+
+[node name="SearchAbilities" type="LineEdit" parent="AbilityChoose/Panel/VBoxContainer" unique_id=1525498881]
+layout_mode = 2
+placeholder_text = "Search"
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AbilityChoose/Panel/VBoxContainer" unique_id=1651518534]
+custom_minimum_size = Vector2(0, 227.114)
+layout_mode = 2
+
+[node name="AbilityChooseGrid" type="FlowContainer" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer" unique_id=844330700]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="AbilityChooseTemplate" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=152856914 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate2" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=2027927730 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate3" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=612908823 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate4" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=591508656 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate5" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1499211309 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate6" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1548291012 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate7" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1260535480 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate8" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1082332251 instance=ExtResource("9_tti22")]
+layout_mode = 2
+
+[node name="CloseAbilityChoose" type="Button" parent="AbilityChoose/Panel/VBoxContainer" unique_id=904680661]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "Cancel"
+
+[node name="ItemChoose" type="CenterContainer" parent="." unique_id=2118606804]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="ItemChoose" unique_id=1875530307]
+custom_minimum_size = Vector2(462.025, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemChoose/Panel" unique_id=1534922049]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemChoose/Panel/VBoxContainer" unique_id=1846474860]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ItemChoose/Panel/VBoxContainer/HBoxContainer" unique_id=1807082435]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Abilities"
+horizontal_alignment = 1
+
+[node name="SearchItems" type="LineEdit" parent="ItemChoose/Panel/VBoxContainer" unique_id=1596846387]
+layout_mode = 2
+placeholder_text = "Search"
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ItemChoose/Panel/VBoxContainer" unique_id=35175930]
+custom_minimum_size = Vector2(0, 227.114)
+layout_mode = 2
+
+[node name="ItemChooseGrid" type="FlowContainer" parent="ItemChoose/Panel/VBoxContainer/ScrollContainer" unique_id=546891573]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="CloseAbilityChoose" type="Button" parent="ItemChoose/Panel/VBoxContainer" unique_id=1485849587]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "Cancel"
+
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="GalleryFileDialog" to="." method="_on_gallery_file_dialog_file_selected"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Rename" to="." method="_on_rename_pressed"]
@@ -583,9 +712,18 @@ stretch_mode = 5
 [connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Race" to="." method="_on_race_text_changed"]
 [connection signal="text_changed" from="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/Description" to="." method="_on_description_text_changed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2/NewAbility" to="." method="_on_new_ability_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2/ChooseAbility" to="." method="_on_choose_ability_pressed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer/ManaSpinBox" to="." method="_on_mana_spin_box_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer/MaxManaSpinBox" to="." method="_on_max_mana_spin_box_value_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer/ChooseItem" to="." method="_on_choose_item_pressed"]
 [connection signal="text_changed" from="AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine" to="." method="_on_ability_name_line_text_changed"]
 [connection signal="pressed" from="AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilitySubmitName" to="." method="_on_ability_submit_name_pressed"]
 [connection signal="text_changed" from="ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemNameLine" to="." method="_on_item_name_line_text_changed"]
 [connection signal="pressed" from="ItemCreate/NameSelect/MarginContainer/VBoxContainer/ItemSubmitName" to="." method="_on_item_submit_name_pressed"]
 [connection signal="pressed" from="NameChange/NameSelect/MarginContainer/VBoxContainer/SubmitName" to="." method="_on_submit_name_pressed"]
 [connection signal="pressed" from="ImageView/Panel/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="text_changed" from="AbilityChoose/Panel/VBoxContainer/SearchAbilities" to="." method="_on_search_text_changed"]
+[connection signal="pressed" from="AbilityChoose/Panel/VBoxContainer/CloseAbilityChoose" to="." method="_on_close_ability_choose_pressed"]
+[connection signal="text_changed" from="ItemChoose/Panel/VBoxContainer/SearchItems" to="." method="_on_search_items_text_changed"]
+[connection signal="pressed" from="ItemChoose/Panel/VBoxContainer/CloseAbilityChoose" to="." method="_on_close_ability_choose_pressed"]
