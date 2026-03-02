@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dnaf2hxofxeos"
+path="res://.godot/imported/wall_default.png-7f3a42ba6d9b545f448b31bd752c6580.image"
+
+[deps]
+
+source_file="res://ui/wall_default.png"
+dest_files=["res://.godot/imported/wall_default.png-7f3a42ba6d9b545f448b31bd752c6580.image"]
+
+[params]
+

@@ -13,11 +13,12 @@ config_version=5
 config/name="LoreQuest"
 run/main_scene="uid://dx8b8ysssqny8"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://assets/icons/icon.svg"
+boot_splash/show_image=false
+config/icon="res://icons/icon.svg"
 
 [autoload]
 
-Global="*uid://3smd3084s2eb"
+Globals="*uid://3smd3084s2eb"
 
 [display]
 
@@ -29,7 +30,20 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://characters/": "red",
+"res://fonts/": "yellow",
+"res://icons/": "teal",
+"res://libraries/": "green",
+"res://systems/": "blue",
+"res://themes/": "pink",
+"res://ui/": "purple",
+"res://worlds/": "orange"
+}
 
 [physics]
 

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://mq6efa3u3gs8"]
+
+[ext_resource type="Script" uid="uid://hoekkr2i4mrd" path="res://systems/testing/theme_testing.gd" id="1_l610j"]
+
+[node name="TomlTesting" type="Control" unique_id=912279887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l610j")
+
+[node name="Button" type="Button" parent="." unique_id=1392947328]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Test"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2015799335]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 73.0
+offset_right = 550.0
+offset_bottom = 346.0
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer" unique_id=1877376212]
+layout_mode = 2
+current_tab = 0
+
+[node name="TestTab" type="Control" parent="PanelContainer/TabContainer" unique_id=24880290]
+layout_mode = 2
+metadata/_tab_index = 0

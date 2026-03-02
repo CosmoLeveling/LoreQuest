@@ -1,0 +1,767 @@
+[gd_scene format=3 uid="uid://d1klvxp06pdqr"]
+
+[ext_resource type="Script" uid="uid://dty8yjwrvraxc" path="res://characters/character_menu.gd" id="1_hf8t7"]
+[ext_resource type="Material" uid="uid://dfns8uhc1h7mi" path="res://ui/materials/gradient.tres" id="2_3wcm4"]
+[ext_resource type="Script" uid="uid://hkfyy3kl2ayu" path="res://characters/abilities/ability_box.gd" id="3_2hmqm"]
+[ext_resource type="Script" uid="uid://dxo7n0h7wer7i" path="res://characters/gallery/gallery_grid.gd" id="3_3wcm4"]
+[ext_resource type="Theme" uid="uid://i3ie1adu7bjd" path="res://themes/main_theme.tres" id="3_nqaab"]
+[ext_resource type="FontFile" uid="uid://jcpmgtxnhnpi" path="res://fonts/CaveatBrush-Regular.ttf" id="4_2hmqm"]
+[ext_resource type="Script" uid="uid://n20usg1q4k71" path="res://characters/items/item_box.gd" id="4_4rt5v"]
+[ext_resource type="Texture2D" uid="uid://id44hxhpp522" path="res://ui/button_normal.png" id="5_1d2dp"]
+[ext_resource type="Texture2D" uid="uid://nkvwipem33ra" path="res://ui/button_hovered.png" id="6_4rt5v"]
+[ext_resource type="Script" uid="uid://clgaicinbl1ku" path="res://characters/notes_box.gd" id="6_fl4wo"]
+[ext_resource type="Texture2D" uid="uid://bjbx0kscby18q" path="res://ui/button_pressed.png" id="7_fl4wo"]
+[ext_resource type="Texture2D" uid="uid://buyxeeuyqnq5o" path="res://ui/scroll.png" id="8_7yc5l"]
+[ext_resource type="PackedScene" uid="uid://c3kgmdmfl0h87" path="res://libraries/abilities/templates/ability_choose_template.tscn" id="9_8vq3g"]
+[ext_resource type="Script" uid="uid://c2u2en6dxmy4x" path="res://characters/abilities/ability_choose_grid.gd" id="11_2hmqm"]
+[ext_resource type="Script" uid="uid://15jd7cvv2lib" path="res://characters/items/item_choose_grid.gd" id="13_1d2dp"]
+
+[sub_resource type="Image" id="Image_4rt5v"]
+data = {
+"data": PackedByteArray(20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 20, 24, 46, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 20, 24, 46, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255, 64, 73, 115, 255),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_pvdot"]
+image = SubResource("Image_4rt5v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72rxd"]
+texture = ExtResource("5_1d2dp")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3j1n7"]
+texture = ExtResource("6_4rt5v")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ur6v"]
+texture = ExtResource("6_4rt5v")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4cjn"]
+texture = ExtResource("7_fl4wo")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6pjdy"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osbnp"]
+atlas = SubResource("CompressedTexture2D_6pjdy")
+region = Rect2(1, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43mme"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_osbnp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ksylv"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5n2m"]
+atlas = SubResource("CompressedTexture2D_ksylv")
+region = Rect2(1, 17, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2k7va"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_g5n2m")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmiwu"]
+load_path = "res://.godot/imported/scroll.png-deb7ec071468d3b2096650c4ad5b514c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsjp"]
+atlas = SubResource("CompressedTexture2D_cmiwu")
+region = Rect2(1, 1, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xihlp"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_rbsjp")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pjdy"]
+atlas = ExtResource("8_7yc5l")
+region = Rect2(1, 49, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uggy0"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("AtlasTexture_6pjdy")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_41oo2"]
+Button/colors/font_color = Color(0.61935264, 0.456662, 0.3650089, 1)
+Button/colors/font_disabled_color = Color(0.61960787, 0.45490196, 0.3647059, 0.5019608)
+Button/fonts/font = ExtResource("4_2hmqm")
+Button/styles/disabled = SubResource("StyleBoxTexture_72rxd")
+Button/styles/focus = SubResource("StyleBoxTexture_3j1n7")
+Button/styles/hover = SubResource("StyleBoxTexture_5ur6v")
+Button/styles/normal = SubResource("StyleBoxTexture_72rxd")
+Button/styles/pressed = SubResource("StyleBoxTexture_f4cjn")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_43mme")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_2k7va")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_xihlp")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_uggy0")
+
+[node name="CharacterMenu" type="Control" unique_id=137672067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hf8t7")
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1162622462]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1090, 360)
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
+use_native_dialog = true
+
+[node name="GalleryFileDialog" type="FileDialog" parent="." unique_id=711785201]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1090, 360)
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png", "*.jpeg", "*.jpg")
+use_native_dialog = true
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=516035177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.098353826, 0.08140286, 0.13796946, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=404907314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=876009479]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1904026621]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1381311206]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=879141254]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=118860732]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "NAME"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Rename" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1088225263]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rename"
+
+[node name="Avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=585915707]
+unique_name_in_owner = true
+material = ExtResource("2_3wcm4")
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = SubResource("ImageTexture_pvdot")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ChangeImage" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=858942007]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Change Image"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1101778411]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=1416919134]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pronouns" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1044192569]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Pronouns"
+alignment = 1
+
+[node name="Race" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1671910856]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Race"
+alignment = 1
+
+[node name="Description" type="TextEdit" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1760835510]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Description"
+wrap_mode = 1
+scroll_smooth = true
+scroll_fit_content_height = true
+
+[node name="Save" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1192068264]
+layout_mode = 2
+text = "Save and Close"
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/HBoxContainer" unique_id=699099030]
+layout_mode = 2
+size_flags_horizontal = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Items&Abilities" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=1215433315]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Abilities" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities" unique_id=1870284321]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities" unique_id=387908258]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=235834462]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Abilities"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=249493482]
+layout_mode = 2
+alignment = 1
+
+[node name="NewAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2" unique_id=1987300254]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ADD"
+
+[node name="ChooseAbility" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer2" unique_id=67029309]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose From Library"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=1274356102]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=840845980]
+custom_minimum_size = Vector2(10.45, 0)
+layout_mode = 2
+
+[node name="Mana" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=940610487]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Mana:"
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=637415439]
+layout_mode = 2
+
+[node name="ManaSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=697930366]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=583524037]
+layout_mode = 2
+
+[node name="MaxMana" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=691131630]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Max Mana:"
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=2065802550]
+layout_mode = 2
+
+[node name="MaxManaSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/HBoxContainer" unique_id=1212992031]
+unique_name_in_owner = true
+layout_mode = 2
+allow_greater = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer" unique_id=160756508]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AbilityBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Abilities/VBoxContainer/ScrollContainer" unique_id=1111365185]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_2hmqm")
+
+[node name="Items" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities" unique_id=1793139028]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items" unique_id=1572092996]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=553759428]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Items"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=622701872]
+layout_mode = 2
+alignment = 1
+
+[node name="NewItem" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer" unique_id=1955209751]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ADD"
+
+[node name="ChooseItem" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/HBoxContainer" unique_id=872673524]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose From Library"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer" unique_id=502332282]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Items&Abilities/Items/VBoxContainer/ScrollContainer" unique_id=622327207]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_4rt5v")
+
+[node name="Gallery" type="Control" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=160214747]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 1
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery" unique_id=1361588215]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel" unique_id=1329625717]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1364708946]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Gallery"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1589402524]
+layout_mode = 2
+alignment = 1
+
+[node name="AddGalleryImage" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/HBoxContainer" unique_id=1578566406]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Image"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer" unique_id=1866012329]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer" unique_id=155740443]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GalleryGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/TabContainer/Gallery/Panel/VBoxContainer/ScrollContainer/CenterContainer" unique_id=1938554690]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+script = ExtResource("3_3wcm4")
+
+[node name="Notes" type="Control" parent="MarginContainer/HBoxContainer/TabContainer" unique_id=666509607]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 2
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes" unique_id=338832362]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel" unique_id=1942502734]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1865828917]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Notes"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1825714568]
+layout_mode = 2
+alignment = 1
+
+[node name="AddNote" type="Button" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/HBoxContainer" unique_id=1195228075]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add Note"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer" unique_id=1074394048]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NotesBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TabContainer/Notes/Panel/VBoxContainer/ScrollContainer" unique_id=1964491098]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("6_fl4wo")
+
+[node name="AbilityCreate" type="CenterContainer" parent="." unique_id=1828614637]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameSelect" type="PanelContainer" parent="AbilityCreate" unique_id=1377439838]
+layout_mode = 2
+theme = ExtResource("3_nqaab")
+
+[node name="MarginContainer" type="MarginContainer" parent="AbilityCreate/NameSelect" unique_id=613054203]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilityCreate/NameSelect/MarginContainer" unique_id=1058204208]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1868488610]
+layout_mode = 2
+text = "Enter Ability Name"
+
+[node name="AbilityNameLine" type="LineEdit" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1975141818]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AbilitySubmitName" type="Button" parent="AbilityCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1988449868]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+text = "Submit"
+
+[node name="ItemCreate" type="CenterContainer" parent="." unique_id=264686282]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameSelect" type="PanelContainer" parent="ItemCreate" unique_id=433853580]
+layout_mode = 2
+theme = ExtResource("3_nqaab")
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemCreate/NameSelect" unique_id=1708601942]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemCreate/NameSelect/MarginContainer" unique_id=1582774433]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=935032393]
+layout_mode = 2
+text = "Enter Ability Name"
+
+[node name="ItemNameLine" type="LineEdit" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=2051928135]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ItemSubmitName" type="Button" parent="ItemCreate/NameSelect/MarginContainer/VBoxContainer" unique_id=1642388691]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+text = "Submit"
+
+[node name="NameChange" type="CenterContainer" parent="." unique_id=879785999]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameSelect" type="PanelContainer" parent="NameChange" unique_id=1957173854]
+layout_mode = 2
+theme = ExtResource("3_nqaab")
+
+[node name="MarginContainer" type="MarginContainer" parent="NameChange/NameSelect" unique_id=1328535190]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameChange/NameSelect/MarginContainer" unique_id=1674950568]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=655561354]
+layout_mode = 2
+text = "Enter Character Name"
+
+[node name="NameChangeLine" type="LineEdit" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=1668244254]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="SubmitName" type="Button" parent="NameChange/NameSelect/MarginContainer/VBoxContainer" unique_id=796679933]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_41oo2")
+text = "Submit"
+
+[node name="ImageView" type="CenterContainer" parent="." unique_id=1831847543]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="ImageView" unique_id=1218511913]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ImageView/Panel" unique_id=371219071]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ImageView/Panel/VBoxContainer" unique_id=384566717]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=796409063]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Image"
+horizontal_alignment = 1
+
+[node name="CloseImage" type="Button" parent="ImageView/Panel/VBoxContainer/HBoxContainer" unique_id=266144517]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "X"
+
+[node name="ImageViewTexture" type="TextureRect" parent="ImageView/Panel/VBoxContainer" unique_id=1640987004]
+unique_name_in_owner = true
+material = ExtResource("2_3wcm4")
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 5
+
+[node name="AbilityChoose" type="CenterContainer" parent="." unique_id=627195702]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="AbilityChoose" unique_id=1031402165]
+custom_minimum_size = Vector2(462.025, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilityChoose/Panel" unique_id=928704408]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AbilityChoose/Panel/VBoxContainer" unique_id=336188779]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AbilityChoose/Panel/VBoxContainer/HBoxContainer" unique_id=572488563]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Abilities"
+horizontal_alignment = 1
+
+[node name="SearchAbilities" type="LineEdit" parent="AbilityChoose/Panel/VBoxContainer" unique_id=1525498881]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Search"
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AbilityChoose/Panel/VBoxContainer" unique_id=1651518534]
+custom_minimum_size = Vector2(0, 227.114)
+layout_mode = 2
+
+[node name="AbilityChooseGrid" type="FlowContainer" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer" unique_id=844330700]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("11_2hmqm")
+
+[node name="AbilityChooseTemplate" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=152856914 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate2" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=2027927730 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate3" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=612908823 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate4" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=591508656 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate5" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1499211309 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate6" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1548291012 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate7" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1260535480 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="AbilityChooseTemplate8" parent="AbilityChoose/Panel/VBoxContainer/ScrollContainer/AbilityChooseGrid" unique_id=1082332251 instance=ExtResource("9_8vq3g")]
+layout_mode = 2
+
+[node name="CloseAbilityChoose" type="Button" parent="AbilityChoose/Panel/VBoxContainer" unique_id=904680661]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "Cancel"
+
+[node name="ItemChoose" type="CenterContainer" parent="." unique_id=2118606804]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="ItemChoose" unique_id=1875530307]
+custom_minimum_size = Vector2(462.025, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemChoose/Panel" unique_id=1534922049]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ItemChoose/Panel/VBoxContainer" unique_id=1846474860]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ItemChoose/Panel/VBoxContainer/HBoxContainer" unique_id=1807082435]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Items"
+horizontal_alignment = 1
+
+[node name="SearchItems" type="LineEdit" parent="ItemChoose/Panel/VBoxContainer" unique_id=1596846387]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Search"
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ItemChoose/Panel/VBoxContainer" unique_id=35175930]
+custom_minimum_size = Vector2(0, 227.114)
+layout_mode = 2
+
+[node name="ItemChooseGrid" type="FlowContainer" parent="ItemChoose/Panel/VBoxContainer/ScrollContainer" unique_id=546891573]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("13_1d2dp")
+
+[node name="CloseItemChoose" type="Button" parent="ItemChoose/Panel/VBoxContainer" unique_id=1485849587]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="AbilityChoose/Panel/VBoxContainer/CloseAbilityChoose" to="." method="_on_close_ability_choose_pressed"]
