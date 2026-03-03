@@ -1,7 +1,5 @@
 extends Control
 
-const KENNEY_UI = preload("uid://6shp5ck1tnja")
-
 const BACKUPS_MENU = preload("uid://dren5fnwqpe4r")
 const CHARACTER_TEMPLATE = preload("uid://c1ef73xwn2auw")
 const CHARACTER_MENU = preload("uid://d1klvxp06pdqr")
@@ -56,21 +54,22 @@ const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 
 var backups_open:bool = false
 
-@export var themes:Dictionary[String,Theme]
+@export var themes:Dictionary[String,Variant]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	Globals.characters.reactive_changed.connect(func(reactive): _reload_characters(reactive.value))
 	
-	
+	themes_button.add_item("Default")
+
 	for c_theme in DirAccess.get_files_at("user://themes/"):
 		if c_theme.ends_with(".json"):
-			var custom_theme: Theme = ThemeLoader.load_theme("user://themes/"+c_theme)
-			themes[c_theme.trim_suffix(".json")] = custom_theme
+			themes[c_theme.trim_suffix(".json")] = "user://themes/"+c_theme
 	for i_theme in themes.keys():
-		themes_button.add_item(i_theme)
-	get_tree().root.theme = themes["Default"]
+		if i_theme != "Default":
+			themes_button.add_item(i_theme)
+	ThemeLoader.load_theme(themes["Default"])
 	thread = Thread.new()
 	await load_save()
 	if not DirAccess.dir_exists_absolute(save_dir):
@@ -305,7 +304,10 @@ func _load_settings() -> void:
 			for i in range(themes_button.get_item_count()):
 				if themes_button.get_item_text(i) == option:
 					themes_button.select(i)
-			get_tree().root.theme = themes[option]
+			if themes[option] is String:
+				ThemeLoader.load_theme(themes[option])
+			else:
+				get_tree().root.theme = themes[option]
 
 func _load_abilities() -> void:
 	var addon := ""
@@ -520,7 +522,10 @@ func _on_backups_pressed() -> void:
 
 func _on_themes_button_item_selected(index: int) -> void:
 	var option:String  = themes_button.get_item_text(index)
-	get_tree().root.theme = themes[option]
+	if themes[option] is String:
+		ThemeLoader.load_theme(themes[option])
+	else:
+		get_tree().root.theme = themes[option]
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:

@@ -1,0 +1,280 @@
+{
+  "colors": {
+    "on_background": "#9e7460",
+    "on_primary":    "#9e7460",
+    "primary":       "#9e7460"
+  },
+
+  "fonts": {
+  "default": "res://fonts/CaveatBrush-Regular.ttf",
+  "bold":    "res://fonts/CaveatBrush-Regular.ttf",
+  "mono":    "res://fonts/CaveatBrush-Regular.ttf",
+  "label":   "res://fonts/Wood.png"
+},
+
+  "font_sizes": {
+    "base": 14
+  },
+
+  "control_colors": {
+	  "Label": {
+    "font_color": "#ffffff"
+	  },
+    "Button": {
+      "font_color":          "#9e7460",
+      "font_disabled_color": "#9e746080"
+    },
+    "LineEdit": {
+      "font_color":             "#9e7460",
+      "caret_color":            "#9e7460",
+      "font_placeholder_color": "#9e746099",
+      "font_selected_color":    "#9e7460"
+    },
+    "TextEdit": {
+      "font_color":             "#9e7460",
+      "caret_color":            "#9e7460",
+      "font_placeholder_color": "#9e746099"
+    },
+    "TabBar": {
+      "font_selected_color":   "#9e7460",
+      "font_unselected_color": "#9e7460d3"
+    },
+    "TabContainer": {
+      "font_selected_color":   "#9e7460",
+      "font_unselected_color": "#9e7460c7"
+    }
+  },
+
+  "textures": {
+    "button_normal":  "res://ui/button_normal.png",
+    "button_hovered": "res://ui/button_hovered.png",
+    "button_pressed": "res://ui/button_pressed.png",
+    "panel":          "res://ui/panel.png",
+    "scroll":         "res://ui/scroll.png",
+
+    "tab_normal": {
+      "path":   "res://ui/Wooden Pixel Art GUI 32x32.png",
+      "region": [418, 1089, 92, 31]
+    },
+
+    "arrow_up": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 2, 12, 8]
+    },
+    "arrow_down": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 38, 12, 8]
+    },
+    "arrow_up_hover": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 14, 12, 8]
+    },
+    "arrow_down_hover": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 38, 12, 8]
+    },
+    "arrow_up_pressed": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 26, 12, 8]
+    },
+    "arrow_down_pressed": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 50, 12, 8]
+    },
+    "arrow_up_disabled": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 2, 12, 8]
+    },
+    "arrow_down_disabled": {
+      "path":   "res://ui/arrows.png",
+      "region": [0, 62, 12, 8]
+    },
+
+    "scroll_grabber": {
+      "path":   "res://ui/scroll.png",
+      "region": [1, 1, 14, 14]
+    },
+    "scroll_grabber_highlight": {
+      "path":   "res://ui/scroll.png",
+      "region": [1, 17, 14, 14]
+    },
+    "scroll_grabber_pressed": {
+      "path":   "res://ui/scroll.png",
+      "region": [1, 33, 14, 14]
+    },
+    "scroll_track": {
+      "path":   "res://ui/scroll.png",
+      "region": [1, 49, 14, 14]
+    }
+  },
+
+  "icons": {
+    "OptionButton": {
+      "arrow": "arrow_down"
+    },
+    "SpinBox": {
+      "up":            "arrow_up",
+      "down":          "arrow_down",
+      "up_hover":      "arrow_up_hover",
+      "down_hover":    "arrow_down_hover",
+      "up_pressed":    "arrow_up_pressed",
+      "down_pressed":  "arrow_down_pressed",
+      "up_disabled":   "arrow_up_disabled",
+      "down_disabled": "arrow_down_disabled"
+    }
+  },
+
+  "styleboxes": {
+    "Button": {
+      "normal": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      },
+      "hover": {
+	"type":    "texture",
+	"texture": "button_hovered",
+	"margins": [4, 4, 4, 4]
+      },
+      "focus": {
+	"type":    "texture",
+	"texture": "button_hovered",
+	"margins": [4, 4, 4, 4]
+      },
+      "pressed": {
+	"type":    "texture",
+	"texture": "button_pressed",
+	"margins": [4, 4, 4, 4]
+      },
+      "disabled": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      }
+    },
+
+    "LineEdit": {
+      "normal": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [5, 5, 5, 5]
+      },
+      "focus": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [5, 5, 5, 5]
+      },
+      "read_only": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [5, 5, 5, 5]
+      }
+    },
+
+    "TextEdit": {
+      "normal": {
+	"type":            "texture",
+	"texture":         "button_normal",
+	"margins":         [5, 5, 5, 5],
+	"expand_margins":  [0, 0, 0, 5]
+      }
+    },
+
+    "Panel": {
+      "panel": {
+	"type":    "flat",
+	"bg_color": "#191318ff"
+      }
+    },
+
+    "PanelContainer": {
+      "panel": {
+	"type":    "texture",
+	"texture": "panel",
+	"margins": [22, 22, 22, 22]
+      }
+    },
+
+    "Label": {
+      "normal": {
+	"type":    "texture",
+	"texture": "tab_normal",
+	"margins":        [0, 2, 0, 4],
+	"expand_margins": [5, 0, 5, 0]
+      }
+    },
+
+    "TabContainer": {
+      "tab_selected": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      },
+      "tab_unselected": {
+	"type":    "texture",
+	"texture": "button_pressed",
+	"margins": [4, 4, 4, 4]
+      },
+      "tab_hovered": {
+	"type":    "texture",
+	"texture": "button_hovered",
+	"margins": [4, 4, 4, 4]
+      },
+      "panel": {
+	"type": "empty"
+      }
+    },
+
+    "TabBar": {
+      "tab_selected": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      },
+      "tab_unselected": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      },
+      "tab_focus": {
+	"type":    "texture",
+	"texture": "button_normal",
+	"margins": [4, 4, 4, 4]
+      }
+    },
+
+    "HSeparator": {
+      "separator": {
+	"bg_color":  "#ff9341ff",
+	"thickness": 1
+      }
+    },
+
+    "VScrollBar": {
+      "grabber": {
+	"type":            "texture",
+	"texture":         "scroll_grabber_pressed",
+	"margins":         [1, 1, 1, 1],
+	"content_margin":  [8, 0, 0, 0]
+      },
+      "grabber_highlight": {
+	"type":            "texture",
+	"texture":         "scroll_grabber_highlight",
+	"margins":         [1, 1, 1, 1],
+	"content_margin":  [8, 0, 0, 0]
+      },
+      "grabber_pressed": {
+	"type":            "texture",
+	"texture":         "scroll_grabber",
+	"margins":         [1, 1, 1, 1],
+	"content_margin":  [8, 0, 0, 0]
+      },
+      "scroll": {
+	"type":            "texture",
+	"texture":         "scroll_track",
+	"margins":         [1, 1, 1, 1],
+	"content_margin":  [8, 0, 0, 0]
+      }
+    }
+  }
+}

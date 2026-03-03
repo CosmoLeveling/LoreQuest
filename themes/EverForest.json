@@ -1,0 +1,76 @@
+{
+  "colors": {
+    "primary":        "#a7c080",
+    "secondary":      "#83c092",
+    "background":     "#2d353b",
+    "surface":        "#343f44",
+    "overlay":        "#3d484d",
+    "on_primary":     "#2d353b",
+    "on_background":  "#d3c6aa",
+    "muted":          "#475258",
+    "subtle":         "#543a48",
+    "error":          "#e67e80",
+    "success":        "#a7c080",
+    "warning":        "#dbbc7f",
+    "aqua":           "#83c092",
+    "orange":         "#e69875"
+  },
+  "fonts": {
+    "default": "res://fonts/CaveatBrush-Regular.ttf",
+    "bold":    "res://fonts/CaveatBrush-Regular.ttf",
+    "mono":    "res://fonts/CaveatBrush-Regular.ttf"
+  },
+  "font_sizes": {
+    "xs": 10, "sm": 12, "base": 14, "md": 16, "lg": 20, "xl": 26, "heading": 32
+  },
+  "control_colors": {
+    "Label": { "font_color": "#d3c6aa" },
+    "TabBar": {
+      "font_selected_color":   "#a7c080",
+      "font_unselected_color": "#475258"
+    },
+    "TabContainer": {
+      "font_selected_color":   "#a7c080",
+      "font_unselected_color": "#475258"
+    }
+  },
+  "grid": {
+    "grid_size":        40,
+    "background_color": "#2d353b",
+    "minor_color":      "#3d484d80",
+    "major_color":      "#a7c080aa",
+    "axis_color":       "#83c092ff",
+    "major_line_every": 5
+  },
+  "styleboxes": {
+    "Button": {
+      "normal":   { "bg_color": "#3d484d", "border_color": "#a7c080", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "hover":    { "bg_color": "#475258", "border_color": "#a7c080", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "pressed":  { "bg_color": "#a7c080", "border_color": "#a7c080", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "disabled": { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] }
+    },
+    "PanelContainer": { "panel": { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
+    "Panel":          { "panel": { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
+    "LineEdit": {
+      "normal":    { "bg_color": "#2d353b", "border_color": "#3d484d", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
+      "focus":     { "bg_color": "#2d353b", "border_color": "#a7c080", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
+      "read_only": { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] }
+    },
+    "TextEdit": {
+      "normal":    { "bg_color": "#2d353b", "border_color": "#3d484d", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] },
+      "focus":     { "bg_color": "#2d353b", "border_color": "#a7c080", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] },
+      "read_only": { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] }
+    },
+    "TabContainer": {
+      "tab_selected":   { "bg_color": "#3d484d", "border_color": "#a7c080", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "tab_unselected": { "bg_color": "#2d353b", "border_color": "#3d484d", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "tab_hover":      { "bg_color": "#475258", "border_color": "#475258", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "panel":          { "bg_color": "#343f44", "border_color": "#3d484d", "border_width": 1, "corner_radius": 0, "content_margin": [8, 8, 8, 8] }
+    },
+    "HSeparator": { "separator": { "bg_color": "#3d484d", "thickness": 1 } },
+    "ProgressBar": {
+      "background": { "bg_color": "#3d484d", "border_color": "#475258", "border_width": 1, "corner_radius": 5, "content_margin": [0, 0, 0, 0] },
+      "fill":       { "bg_color": "#a7c080", "border_color": "#a7c080", "border_width": 0, "corner_radius": 5, "content_margin": [0, 0, 0, 0] }
+    }
+  }
+}

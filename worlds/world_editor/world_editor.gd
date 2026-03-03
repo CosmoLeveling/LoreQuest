@@ -116,6 +116,11 @@ func _update_drag():
 		current_room.points_changed.emit()
 
 func _ready() -> void:
+	ThemeLoader.theme_loaded.connect(func():
+		panel.theme = ThemeLoader.global_theme
+		line_name.theme = ThemeLoader.global_theme
+		background.queue_redraw()
+		)
 	panel.theme = get_tree().root.theme
 	line_name.theme = get_tree().root.theme
 
@@ -155,7 +160,6 @@ func select_room(room:Room):
 func _get_grid_point(pos:Vector2):
 	var new_pos:Vector2= pos.snapped(TILE_SIZE)
 	return new_pos
-
 
 func _on_new_room_pressed() -> void:
 	name_line.text = ""

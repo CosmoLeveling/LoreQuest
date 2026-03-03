@@ -1,6 +1,7 @@
 extends Control
 
+@onready var button_3: Button = $PanelContainer/HBoxContainer/Button3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	theme = ThemeLoader.load_theme("user://themes/test.json")
+	ThemeLoader.switch_theme("user://themes/Testing.json")

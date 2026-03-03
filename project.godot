@@ -19,6 +19,7 @@ config/icon="res://icons/icon.svg"
 [autoload]
 
 Globals="*uid://3smd3084s2eb"
+ThemeLoader="*uid://cy42u2w1a6m0u"
 
 [display]
 

@@ -11,12 +11,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l610j")
 
-[node name="Button" type="Button" parent="." unique_id=1392947328]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Test"
-
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2015799335]
 layout_mode = 0
 offset_left = 107.0
@@ -24,10 +18,21 @@ offset_top = 73.0
 offset_right = 550.0
 offset_bottom = 346.0
 
-[node name="TabContainer" type="TabContainer" parent="PanelContainer" unique_id=1877376212]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1823628196]
 layout_mode = 2
-current_tab = 0
 
-[node name="TestTab" type="Control" parent="PanelContainer/TabContainer" unique_id=24880290]
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1392947328]
 layout_mode = 2
-metadata/_tab_index = 0
+size_flags_horizontal = 3
+text = "Normal"
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer" unique_id=385849726]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Disabled"
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer" unique_id=566585749]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Focus"

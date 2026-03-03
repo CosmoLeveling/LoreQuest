@@ -1,0 +1,74 @@
+{
+  "colors": {
+    "primary":        "#88c0d0",
+    "secondary":      "#81a1c1",
+    "background":     "#2e3440",
+    "surface":        "#3b4252",
+    "overlay":        "#434c5e",
+    "on_primary":     "#2e3440",
+    "on_background":  "#eceff4",
+    "muted":          "#4c566a",
+    "subtle":         "#616e88",
+    "error":          "#bf616a",
+    "success":        "#a3be8c",
+    "warning":        "#ebcb8b"
+  },
+  "fonts": {
+    "default": "res://fonts/CaveatBrush-Regular.ttf",
+    "bold":    "res://fonts/CaveatBrush-Regular.ttf",
+    "mono":    "res://fonts/CaveatBrush-Regular.ttf"
+  },
+  "font_sizes": {
+    "xs": 10, "sm": 12, "base": 14, "md": 16, "lg": 20, "xl": 26, "heading": 32
+  },
+  "control_colors": {
+    "Label": { "font_color": "#eceff4" },
+    "TabBar": {
+      "font_selected_color":   "#88c0d0",
+      "font_unselected_color": "#616e88"
+    },
+    "TabContainer": {
+      "font_selected_color":   "#88c0d0",
+      "font_unselected_color": "#616e88"
+    }
+  },
+  "grid": {
+    "grid_size":        40,
+    "background_color": "#2e3440",
+    "minor_color":      "#4c566a80",
+    "major_color":      "#88c0d0aa",
+    "axis_color":       "#88c0d0ff",
+    "major_line_every": 5
+  },
+  "styleboxes": {
+    "Button": {
+      "normal":   { "bg_color": "#3b4252", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "hover":    { "bg_color": "#434c5e", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "pressed":  { "bg_color": "#88c0d0", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] },
+      "disabled": { "bg_color": "#3b4252", "border_color": "#4c566a", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] }
+    },
+    "PanelContainer": { "panel": { "bg_color": "#3b4252", "border_color": "#434c5e", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
+    "Panel":          { "panel": { "bg_color": "#3b4252", "border_color": "#434c5e", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
+    "LineEdit": {
+      "normal":    { "bg_color": "#2e3440", "border_color": "#4c566a", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
+      "focus":     { "bg_color": "#2e3440", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
+      "read_only": { "bg_color": "#3b4252", "border_color": "#434c5e", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] }
+    },
+    "TextEdit": {
+      "normal":    { "bg_color": "#2e3440", "border_color": "#4c566a", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] },
+      "focus":     { "bg_color": "#2e3440", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] },
+      "read_only": { "bg_color": "#3b4252", "border_color": "#434c5e", "border_width": 1, "corner_radius": 5, "content_margin": [10, 8, 10, 8] }
+    },
+    "TabContainer": {
+      "tab_selected":   { "bg_color": "#3b4252", "border_color": "#88c0d0", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "tab_unselected": { "bg_color": "#2e3440", "border_color": "#434c5e", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "tab_hover":      { "bg_color": "#434c5e", "border_color": "#616e88", "border_width": 1, "corner_radius": 5, "content_margin": [12, 6, 12, 6] },
+      "panel":          { "bg_color": "#3b4252", "border_color": "#434c5e", "border_width": 1, "corner_radius": 0, "content_margin": [8, 8, 8, 8] }
+    },
+    "HSeparator": { "separator": { "bg_color": "#4c566a", "thickness": 1 } },
+    "ProgressBar": {
+      "background": { "bg_color": "#3b4252", "border_color": "#4c566a", "border_width": 1, "corner_radius": 5, "content_margin": [0, 0, 0, 0] },
+      "fill":       { "bg_color": "#88c0d0", "border_color": "#88c0d0", "border_width": 0, "corner_radius": 5, "content_margin": [0, 0, 0, 0] }
+    }
+  }
+}

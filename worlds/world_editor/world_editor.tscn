@@ -102,11 +102,6 @@ text = "Submit"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=85910698]
 
-[node name="Panel" type="Panel" parent="." unique_id=702193669]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Background" type="Node2D" parent="." unique_id=79824509]
 script = ExtResource("3_e0qdu")
 
