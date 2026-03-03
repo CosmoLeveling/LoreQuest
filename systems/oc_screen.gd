@@ -82,6 +82,7 @@ func _ready() -> void:
 	_reload_worlds()
 	_reload_abilities()
 	_reload_items()
+	
 
 func _reload_abilities():
 	for c in ability_grid.get_children():

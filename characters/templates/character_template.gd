@@ -6,12 +6,19 @@ signal deleted
 @onready var name_label: Label = $MarginContainer/VBoxContainer/Name
 @onready var avatar: TextureRect = $MarginContainer/VBoxContainer/Avatar
 
-var character:Character
-
+var character:Character:
+	set(v):
+		if character != v:
+			character = v
+			dirty = true
+var dirty := true
 func _ready() -> void:
 	refresh_visuals()
 
 func refresh_visuals():
+	if not dirty:
+		return
+	dirty = false
 	if character:
 		character.name.reactive_changed.connect(func(reactive):name_label.text=reactive.value)
 		character.image_path.reactive_changed.connect(func(reactive):
