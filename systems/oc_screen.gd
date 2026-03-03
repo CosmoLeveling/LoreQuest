@@ -58,7 +58,8 @@ var backups_open:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	%CharacterSearch.text_changed.connect(func(_value):_reload_characters(Globals.characters.value))
+	%WorldSearch.text_changed.connect(func(_value):_reload_worlds())
 	Globals.characters.reactive_changed.connect(func(reactive): _reload_characters(reactive.value))
 	
 	themes_button.add_item("Default")
@@ -128,11 +129,12 @@ func _reload_characters(characters:Array) -> void:
 	for c in character_grid.get_children():
 		c.queue_free()
 	for c:Character in characters:
-		var character:CharacterTemplate = CHARACTER_TEMPLATE.instantiate()
-		character.character = c
-		character.open_character.connect(open_character)
-		character_grid.add_child(character)
-		character.deleted.connect(start_save_thread)
+		if c.name.value.to_lower().contains(%CharacterSearch.text.to_lower()) or %CharacterSearch.text=="":
+			var character:CharacterTemplate = CHARACTER_TEMPLATE.instantiate()
+			character.character = c
+			character.open_character.connect(open_character)
+			character_grid.add_child(character)
+			character.deleted.connect(start_save_thread)
 	amount.text = "Current Amount: "+str(characters.size())
 
 func open_character(character:Character):
@@ -163,11 +165,12 @@ func _reload_worlds() -> void:
 	for c in world_grid.get_children():
 		c.queue_free()
 	for c:World in worlds:
-		var world:WorldTemplate = WORLD_TEMPLATE.instantiate()
-		world.world = c
-		world.open_world.connect(open_world)
-		world_grid.add_child(world)
-		world.deleted.connect(start_save_thread)
+		if c.name.to_lower().contains(%WorldSearch.text.to_lower()) or %WorldSearch.text=="":
+			var world:WorldTemplate = WORLD_TEMPLATE.instantiate()
+			world.world = c
+			world.open_world.connect(open_world)
+			world_grid.add_child(world)
+			world.deleted.connect(start_save_thread)
 
 func open_world(world:World):
 	if not world.open:
