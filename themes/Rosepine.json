@@ -95,7 +95,7 @@
 	"bg_color":       "#1f1d2e",
 	"border_color":   "#26233a",
 	"border_width":   1,
-	"corner_radius":  12,
+	"corner_radius":  0,
 	"content_margin": [16, 16, 16, 16]
       }
     },

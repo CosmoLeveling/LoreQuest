@@ -49,7 +49,7 @@
       "disabled": { "bg_color": "#343746", "border_color": "#44475a", "border_width": 1, "corner_radius": 6, "content_margin": [16, 8, 16, 8] }
     },
     "PanelContainer": { "panel": { "bg_color": "#343746", "border_color": "#44475a", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
-    "Panel":          { "panel": { "bg_color": "#343746", "border_color": "#44475a", "border_width": 1, "corner_radius": 10, "content_margin": [16, 16, 16, 16] } },
+    "Panel":          { "panel": { "bg_color": "#343746", "border_color": "#44475a", "border_width": 1, "corner_radius": 0, "content_margin": [16, 16, 16, 16] } },
     "LineEdit": {
       "normal":    { "bg_color": "#282a36", "border_color": "#44475a", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
       "focus":     { "bg_color": "#282a36", "border_color": "#bd93f9", "border_width": 1, "corner_radius": 5, "content_margin": [10, 6, 10, 6] },
