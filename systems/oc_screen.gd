@@ -51,7 +51,7 @@ const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 @onready var ability_name_line: LineEdit = $AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine
 
 #endregion
-
+var first_load:bool = false
 var backups_open:bool = false
 
 @export var themes:Dictionary[String,Variant]
@@ -72,6 +72,7 @@ func _ready() -> void:
 			themes_button.add_item(i_theme)
 	ThemeLoader.load_theme(themes["Default"])
 	thread = Thread.new()
+	
 	await load_save()
 	if not DirAccess.dir_exists_absolute(save_dir):
 		DirAccess.make_dir_absolute(save_dir)
@@ -125,17 +126,51 @@ func _create_backup():
 
 #region Character Management
 
-func _reload_characters(characters:Array) -> void:
-	for c in character_grid.get_children():
-		c.queue_free()
-	for c:Character in characters:
-		if c.name.value.to_lower().contains(%CharacterSearch.text.to_lower()) or %CharacterSearch.text=="":
-			var character:CharacterTemplate = CHARACTER_TEMPLATE.instantiate()
-			character.character = c
-			character.open_character.connect(open_character)
-			character_grid.add_child(character)
-			character.deleted.connect(start_save_thread)
-	amount.text = "Current Amount: "+str(characters.size())
+func _reload_characters(characters: Array) -> void:
+	if first_load:
+		var existing_panels = character_grid.get_children()
+		var needed = characters.size()
+	
+	# 1. Remove excess panels (back to front to avoid index issues)
+		while existing_panels.size() > needed:
+			var panel = existing_panels.pop_back()
+		# Clean up connections to prevent duplicates / leaks
+			if panel.deleted.is_connected(start_save_thread):
+				panel.deleted.disconnect(start_save_thread)
+			if panel.open_character.is_connected(open_character):
+				panel.open_character.disconnect(open_character)
+			panel.queue_free()
+	
+	# 2. Reuse existing or create new ones — connect only on creation
+		for i in characters.size():
+			var ch: Character = characters[i]
+			var panel: CharacterTemplate
+			
+			if i < existing_panels.size():
+				panel = existing_panels[i] as CharacterTemplate
+			else:
+				panel = CHARACTER_TEMPLATE.instantiate()
+				character_grid.add_child(panel)
+				# Connect signals **only once** when the panel is newly created
+				panel.deleted.connect(start_save_thread)
+				panel.open_character.connect(open_character)
+		
+		# Always update the data
+			panel.character = ch
+		
+		# Update visibility based on search (using .is_empty() is cleaner)
+			panel.visible = (
+			ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())
+			or %CharacterSearch.text.is_empty()
+		)
+		
+		# Refresh visuals — only call if you really need it every time
+			panel.refresh_visuals()
+	
+	# Optional: ask FlowContainer to re-sort / re-flow once at the end
+	character_grid.queue_sort()
+	
+	amount.text = "Current Amount: " + str(characters.size())
 
 func open_character(character:Character):
 	if not character.open:
@@ -395,6 +430,8 @@ func _load_characters() -> void:
 
 		var character = Character.from_date(node_data)
 		Globals.characters.append(character)
+	first_load = true
+	_reload_characters(Globals.characters.value)
 
 func _load_worlds() -> void:
 	var addon := ""

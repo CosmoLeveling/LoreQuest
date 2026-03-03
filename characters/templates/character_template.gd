@@ -9,6 +9,9 @@ signal deleted
 var character:Character
 
 func _ready() -> void:
+	refresh_visuals()
+
+func refresh_visuals():
 	if character:
 		character.name.reactive_changed.connect(func(reactive):name_label.text=reactive.value)
 		character.image_path.reactive_changed.connect(func(reactive):
@@ -26,7 +29,6 @@ func _ready() -> void:
 			)
 		character.name.manually_emit()
 		character.image_path.manually_emit()
-	
 
 
 func _on_open_pressed() -> void:
