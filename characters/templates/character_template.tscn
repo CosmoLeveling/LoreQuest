@@ -44,6 +44,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Group" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1020447390]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Group:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1005409723]
 layout_mode = 2
 alignment = 1

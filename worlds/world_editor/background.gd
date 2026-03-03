@@ -37,7 +37,6 @@ func _load_theme() -> void:
 
 	queue_redraw()
 
-
 func _draw():
 	_load_theme()
 	var viewport_size = get_viewport_rect().size

@@ -9,6 +9,9 @@ signal deleted
 var world:World
 
 func _ready() -> void:
+	refresh_visuals()
+
+func refresh_visuals():
 	if world:
 		name_label.text = world.name
 		var image:Image = Image.new()

@@ -7,7 +7,12 @@ func _ready() -> void:
 	%Pronouns.text_changed.connect(func(text): character.pronouns.value=text)
 	%Race.text_changed.connect(func(text): character.race.value=text)
 	%Description.text_changed.connect(func(): character.description.value=%Description.text)
-	
+	%Group.text_changed.connect(func(text):
+		character.group.value=%Group.text
+		if not Globals.groups.value.has(%Group.text):
+				Globals.groups.append(%Group.text)
+		Globals.groups.manually_emit()
+	)
 	character.name.reactive_changed.connect(func(reactive):
 		if %Name.text != reactive.value:
 			%Name.text = reactive.value
@@ -23,6 +28,10 @@ func _ready() -> void:
 	character.description.reactive_changed.connect(func(reactive):
 		if %Description.text != reactive.value:
 			%Description.text = reactive.value
+		)
+	character.group.reactive_changed.connect(func(reactive):
+		if %Group.text != reactive.value:
+			%Group.text = reactive.value
 		)
 	
 	character.mana.reactive_changed.connect(func(reactive):
