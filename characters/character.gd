@@ -51,13 +51,13 @@ static func from_date(data:Dictionary)->Character:
 	
 	for ability in data.get_or_add("abilities",{}).keys():
 		var new_ability:Ability = Ability.new()
-		new_ability.name = ability
-		new_ability.description = data.get("abilities").get(ability)\
+		new_ability.name.value = ability
+		new_ability.description.value = data.get("abilities").get(ability)\
 		.get("description")
-		new_ability.mana_cost = data.get("abilities").get(ability)\
+		new_ability.mana_cost.value = data.get("abilities").get(ability)\
 		.get("mana_cost")
 		character.ability_ids.append(ability)
-		Globals.abilities.set(ability,new_ability)
+		Globals.abilities.set_at(ability,new_ability)
 	character.ability_ids.append_array(data.get_or_add("ability_ids",[]))
 	var note_list:Array[Note]
 	for note in data.get_or_add("notes",{}).keys():
@@ -70,10 +70,11 @@ static func from_date(data:Dictionary)->Character:
 	character.notes.value = note_list
 	for item in data.get_or_add("items",{}).keys():
 		var new_item:Item = Item.new()
-		new_item.name = item
-		new_item.description = data.get("items").get(item)\
+		new_item.name.value = item
+		new_item.description.value = data.get("items").get(item)\
 		.get("description")
 		character.item_ids.append(item)
-		Globals.items.set(item,new_item)
+		Globals.items.set_at(item,new_item)
+		print(Globals.items.value)
 	character.item_ids.append_array(data.get_or_add("item_ids",[]))
 	return character

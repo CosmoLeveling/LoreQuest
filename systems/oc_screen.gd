@@ -271,11 +271,11 @@ func start_save_thread():
 	thread.start(save)
 
 func load_save():
-	_load_items()
-	_load_abilities()
 	_load_settings()
 	_load_characters()
 	_load_worlds()
+	_load_items()
+	_load_abilities()
 
 func _load_settings() -> void:
 	var addon := ""
