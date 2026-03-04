@@ -1,8 +1,5 @@
 extends Node
 
-## JSON Theme Manager for Godot 4.x
-## Supports StyleBoxFlat, StyleBoxLine, StyleBoxTexture, icons, and per-control colors.
-## Add as Autoload: Project > Project Settings > Autoload > ThemeManager.gd
 
 const DEFAULT_THEME_PATH := "res://themes/Default.json"
 
@@ -14,7 +11,6 @@ var global_theme: Theme = Theme.new()
 var colors: Dictionary = {}
 var font_sizes: Dictionary = {}
 
-# Cache loaded textures so we don't reload from disk repeatedly
 var _texture_cache: Dictionary = {}
 
 
@@ -22,7 +18,6 @@ func _ready() -> void:
 	load_theme(DEFAULT_THEME_PATH)
 
 
-## Load a theme JSON file and apply it globally.
 func load_theme(path: String) -> void:
 	if not FileAccess.file_exists(path):
 		push_error("ThemeManager: Theme file not found: %s" % path)
