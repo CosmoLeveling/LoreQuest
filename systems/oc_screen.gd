@@ -132,7 +132,6 @@ func _reload_characters(characters: Array) -> void:
 		var existing_panels = character_grid.get_children()
 		var needed = characters.size()
 	
-	# 1. Remove excess panels (back to front to avoid index issues)
 		while existing_panels.size() > needed:
 			var panel = existing_panels.pop_back()
 		# Clean up connections to prevent duplicates / leaks
@@ -142,7 +141,6 @@ func _reload_characters(characters: Array) -> void:
 				panel.open_character.disconnect(open_character)
 			panel.queue_free()
 	
-	# 2. Reuse existing or create new ones — connect only on creation
 		for i in characters.size():
 			var ch: Character = characters[i]
 			var panel: CharacterTemplate
@@ -156,19 +154,15 @@ func _reload_characters(characters: Array) -> void:
 				panel.deleted.connect(start_save_thread)
 				panel.open_character.connect(open_character)
 		
-		# Always update the data
 			panel.character = ch
 		
-		# Update visibility based on search (using .is_empty() is cleaner)
 			panel.visible = (
 			ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())
 			or %CharacterSearch.text.is_empty()
 		)
 		
-		# Refresh visuals — only call if you really need it every time
 			panel.refresh_visuals()
 	
-	# Optional: ask FlowContainer to re-sort / re-flow once at the end
 	character_grid.queue_sort()
 	
 	amount.text = "Current Amount: " + str(characters.size())
