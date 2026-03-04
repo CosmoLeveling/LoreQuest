@@ -3,6 +3,8 @@ extends Node
 var abilities:ReactiveDictionary = ReactiveDictionary.new()
 var items:ReactiveDictionary = ReactiveDictionary.new()
 var characters: ReactiveArray = ReactiveArray.new()
+var worlds: ReactiveArray = ReactiveArray.new()
+var themes: ReactiveDictionary = ReactiveDictionary.new()
 var groups: ReactiveArray = ReactiveArray.new()
 
 func center_crop(image:Image)->Image:
@@ -18,6 +20,13 @@ func center_crop(image:Image)->Image:
 	return new_image
 
 func _ready() -> void:
+
+	for theme:String in DirAccess.get_files_at("res://themes"):
+		print(theme)
+		var parsed_theme:String = "res://themes/"+theme
+		print(parsed_theme)
+		themes.set_at(theme.trim_suffix(".json"),parsed_theme)
+
 	abilities.reactive_changed.connect(
 		func (reactive:Reactive):
 			for c:Character in characters.value:
@@ -34,3 +43,5 @@ func _ready() -> void:
 						continue
 					c.item_ids.erase(i)
 			)
+func _exit_tree() -> void:
+	SaveManager.thread.wait_to_finish()

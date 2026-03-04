@@ -12,4 +12,5 @@ func _ready() -> void:
 		if %LineEdit2.text != reactive.value:
 			%LineEdit2.text = reactive.value
 		)
+		
 	

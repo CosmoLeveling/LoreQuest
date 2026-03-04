@@ -31,5 +31,5 @@ func _on_open_pressed() -> void:
 
 func _on_delete_pressed() -> void:
 	deleted.emit()
-	get_tree().current_scene.worlds.erase(world)
+	Globals.worlds.erase(world)
 	queue_free()

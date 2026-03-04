@@ -48,7 +48,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	world.image_path = path
 
 func _on_save_pressed() -> void:
-	get_tree().current_scene.start_save_thread()
+	SaveManager.start_save_thread()
 	get_tree().current_scene._reload_worlds()
 	world.open = false
 	get_parent().queue_free()

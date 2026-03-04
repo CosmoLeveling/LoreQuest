@@ -10,6 +10,6 @@ func _ready() -> void:
 
 
 func _on_save_pressed() -> void:
-	get_tree().current_scene.start_save_thread()
+	SaveManager.start_save_thread()
 	get_parent().get_parent().hide()
 	queue_free()

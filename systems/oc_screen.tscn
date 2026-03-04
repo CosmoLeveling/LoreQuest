@@ -445,18 +445,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qlcxy")
-themes = Dictionary[String, Variant]({
-"CatppuccinMocha": "res://themes/CatppuccinMocha.json",
-"Default": "res://themes/Default.json",
-"Dracula": "res://themes/Dracula.json",
-"EverForest": "res://themes/EverForest.json",
-"GruvBox": "res://themes/GruvBox.json",
-"Nord": "res://themes/Nord.json",
-"OneDark": "res://themes/OneDark.json",
-"Rosepine": "res://themes/Rosepine.json",
-"Solarized": "res://themes/Solarized.json",
-"TokyoNight": "res://themes/TokyoNight.json"
-})
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=144244499]
 oversampling_override = 1.0

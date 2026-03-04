@@ -165,6 +165,6 @@ func _ready() -> void:
 	
 
 func _on_save_pressed() -> void:
-	get_tree().current_scene.start_save_thread()
+	SaveManager.start_save_thread()
 	character.open = false
 	get_parent().queue_free()

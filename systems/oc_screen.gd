@@ -8,9 +8,6 @@ const WORLD_TEMPLATE = preload("uid://dhee4wvahq1f6")
 const ABILITY_TEMPLATE = preload("uid://chufft44nwvjs")
 const save_dir = "user://saves"
 const backups_dir = "user://backups"
-var worlds: Array[World] = [
-]
-var thread:Thread
 var new_name:String
 var new_image:String
 #region Exports
@@ -51,10 +48,8 @@ const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 @onready var ability_name_line: LineEdit = $AbilityCreate/NameSelect/MarginContainer/VBoxContainer/AbilityNameLine
 
 #endregion
-var first_load:bool = false
 var backups_open:bool = false
 
-@export var themes:Dictionary[String,Variant]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -67,14 +62,13 @@ func _ready() -> void:
 
 	for c_theme in DirAccess.get_files_at("user://themes/"):
 		if c_theme.ends_with(".json"):
-			themes[c_theme.trim_suffix(".json")] = "user://themes/"+c_theme
-	for i_theme in themes.keys():
+			Globals.themes.set_at(c_theme.trim_suffix(".json"), "user://themes/"+c_theme)
+	for i_theme in Globals.themes.value.keys():
 		if i_theme != "Default":
 			themes_button.add_item(i_theme)
-	ThemeLoader.load_theme(themes["Default"])
-	thread = Thread.new()
+	ThemeLoader.load_theme(Globals.themes.get_at("Default"))
 	
-	await load_save()
+	await SaveManager.load_save()
 	if not DirAccess.dir_exists_absolute(save_dir):
 		DirAccess.make_dir_absolute(save_dir)
 
@@ -132,7 +126,7 @@ func _reload_items():
 		item.delete.connect(delete_item)
 #region Backup
 func _on_backup_pressed() -> void:
-	save()
+	SaveManager.start_save_thread()
 	_create_backup()
 
 func _create_backup():
@@ -168,46 +162,45 @@ func _open_window(title_text: String, menu_scene: PackedScene, setup: Callable) 
 
 func _reload_characters(characters: Array) -> void:
 	_refresh_groups()
-	if first_load:
-		var existing_panels = character_grid.get_children()
-		var needed = characters.size()
-	
-	# 1. Remove excess panels (back to front to avoid index issues)
-		while existing_panels.size() > needed:
-			var panel = existing_panels.pop_back()
-		# Clean up connections to prevent duplicates / leaks
-			if panel.deleted.is_connected(start_save_thread):
-				panel.deleted.disconnect(start_save_thread)
-			if panel.open_character.is_connected(open_character):
-				panel.open_character.disconnect(open_character)
-			panel.queue_free()
-	
-	# 2. Reuse existing or create new ones — connect only on creation
-		for i in characters.size():
-			var ch: Character = characters[i]
-			var panel: CharacterTemplate
-			
-			if i < existing_panels.size():
-				panel = existing_panels[i] as CharacterTemplate
-			else:
-				panel = CHARACTER_TEMPLATE.instantiate()
-				character_grid.add_child(panel)
-				# Connect signals **only once** when the panel is newly created
-			if not panel.deleted.is_connected(start_save_thread):
-				panel.deleted.connect(start_save_thread)
-			if not panel.open_character.is_connected(open_character):
-				panel.open_character.connect(open_character)
-		# Always update the data
-			panel.character = ch
+	var existing_panels = character_grid.get_children()
+	var needed = characters.size()
+
+# 1. Remove excess panels (back to front to avoid index issues)
+	while existing_panels.size() > needed:
+		var panel = existing_panels.pop_back()
+	# Clean up connections to prevent duplicates / leaks
+		if panel.deleted.is_connected(SaveManager.start_save_thread):
+			panel.deleted.disconnect(SaveManager.start_save_thread)
+		if panel.open_character.is_connected(open_character):
+			panel.open_character.disconnect(open_character)
+		panel.queue_free()
+
+# 2. Reuse existing or create new ones — connect only on creation
+	for i in characters.size():
+		var ch: Character = characters[i]
+		var panel: CharacterTemplate
 		
-		# Update visibility based on search (using .is_empty() is cleaner)
-			panel.visible = (
-			ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())
-			or %CharacterSearch.text.is_empty())and(ch.group.value==%GroupFilter.text or %GroupFilter.get_selected_id()==0 or (%GroupFilter.get_selected_id()==1 and ch.group.value==""))
-		
-		# Refresh visuals — only call if you really need it every time
-			panel.refresh_visuals()
+		if i < existing_panels.size():
+			panel = existing_panels[i] as CharacterTemplate
+		else:
+			panel = CHARACTER_TEMPLATE.instantiate()
+			character_grid.add_child(panel)
+			# Connect signals **only once** when the panel is newly created
+		if not panel.deleted.is_connected(SaveManager.start_save_thread):
+			panel.deleted.connect(SaveManager.start_save_thread)
+		if not panel.open_character.is_connected(open_character):
+			panel.open_character.connect(open_character)
+	# Always update the data
+		panel.character = ch
 	
+	# Update visibility based on search (using .is_empty() is cleaner)
+		panel.visible = (
+		ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())
+		or %CharacterSearch.text.is_empty())and(ch.group.value==%GroupFilter.text or %GroupFilter.get_selected_id()==0 or (%GroupFilter.get_selected_id()==1 and ch.group.value==""))
+	
+	# Refresh visuals — only call if you really need it every time
+		panel.refresh_visuals()
+
 	# Optional: ask FlowContainer to re-sort / re-flow once at the end
 	character_grid.queue_sort()
 	
@@ -240,45 +233,44 @@ func _sort_characters() -> void:
 
 func _reload_worlds() -> void:
 	_refresh_groups()
-	if first_load:
-		var existing_panels = world_grid.get_children()
-		var needed = worlds.size()
+	var existing_panels = world_grid.get_children()
+	var needed = Globals.worlds.value.size()
 	
 	# 1. Remove excess panels (back to front to avoid index issues)
-		while existing_panels.size() > needed:
-			var panel = existing_panels.pop_back()
+	while existing_panels.size() > needed:
+		var panel = existing_panels.pop_back()
 		# Clean up connections to prevent duplicates / leaks
-			if panel.deleted.is_connected(start_save_thread):
-				panel.deleted.disconnect(start_save_thread)
-			if panel.open_character.is_connected(open_character):
-				panel.open_character.disconnect(open_character)
-			panel.queue_free()
+		if panel.deleted.is_connected(SaveManager.start_save_thread):
+			panel.deleted.disconnect(SaveManager.start_save_thread)
+		if panel.open_world.is_connected(open_world):
+			panel.open_world.disconnect(open_world)
+		panel.queue_free()
 	
 	# 2. Reuse existing or create new ones — connect only on creation
-		for i in worlds.size():
-			var ch: World = worlds[i]
-			var panel: WorldTemplate
-			
-			if i < existing_panels.size():
-				panel = existing_panels[i] as WorldTemplate
-			else:
-				panel = WORLD_TEMPLATE.instantiate()
-				world_grid.add_child(panel)
-				# Connect signals **only once** when the panel is newly created
-			if not panel.deleted.is_connected(start_save_thread):
-				panel.deleted.connect(start_save_thread)
-			if not panel.open_world.is_connected(open_world):
-				panel.open_world.connect(open_world)
+	for i in Globals.worlds.value.size():
+		var ch: World = Globals.worlds.get_at(i)
+		var panel: WorldTemplate
+		
+		if i < existing_panels.size():
+			panel = existing_panels[i] as WorldTemplate
+		else:
+			panel = WORLD_TEMPLATE.instantiate()
+			world_grid.add_child(panel)
+			# Connect signals **only once** when the panel is newly created
+		if not panel.deleted.is_connected(SaveManager.start_save_thread):
+			panel.deleted.connect(SaveManager.start_save_thread)
+		if not panel.open_world.is_connected(open_world):
+			panel.open_world.connect(open_world)
 		# Always update the data
-			panel.world = ch
+		panel.world = ch
 		
 		# Update visibility based on search (using .is_empty() is cleaner)
-			panel.visible = (
-			ch.name.to_lower().contains(%WorldSearch.text.to_lower())
-			or %WorldSearch.text.is_empty())
+		panel.visible = (
+		ch.name.to_lower().contains(%WorldSearch.text.to_lower())
+		or %WorldSearch.text.is_empty())
 		
 		# Refresh visuals — only call if you really need it every time
-			panel.refresh_visuals()
+		panel.refresh_visuals()
 	
 	# Optional: ask FlowContainer to re-sort / re-flow once at the end
 	world_grid.queue_sort()
@@ -300,10 +292,10 @@ func open_world(world:World):
 
 func _sort_worlds() -> void:
 	var world_dict: Dictionary[String,World]
-	for c:World in worlds:
+	for c:World in Globals.worlds:
 		world_dict[c.name] = c
 	world_dict.sort()
-	worlds = world_dict.values()
+	Globals.worlds.value = world_dict.values()
 #endregion
 
 #region Character/World Creation
@@ -325,7 +317,7 @@ func _on_submit_image_pressed() -> void:
 	Globals.characters.append(c)
 	_sort_characters()
 	amount.text = "Current Amount:"+str(Globals.characters.value.size())
-	start_save_thread()
+	SaveManager.start_save_thread()
 
 func _on_submit_name_pressed() -> void:
 	new_name = name_line.text
@@ -351,10 +343,10 @@ func _on_world_submit_image_pressed() -> void:
 	world.world = c
 	world.open_world.connect(open_world)
 	world_grid.add_child(world)
-	worlds.append(c)
+	Globals.worlds.append(c)
 	_sort_worlds()
-	world.deleted.connect(start_save_thread)
-	start_save_thread()
+	Globals.world.deleted.connect(SaveManager.start_save_thread)
+	SaveManager.start_save_thread()
 
 func _on_world_submit_name_pressed() -> void:
 	new_name = world_name_line.text
@@ -377,152 +369,11 @@ func _on_file_dialog_file_selected(path: String) -> void:
 #endregion
 
 #region Saving/Loading
-func _parse_save_file(path: String) -> Array[Dictionary]:
-	var results: Array[Dictionary] = []
-	if not FileAccess.file_exists(path): return results
-	var file = FileAccess.open(path, FileAccess.READ)
-	while file.get_position() < file.get_length():
-		var json = JSON.new()
-		if json.parse(file.get_line()) == OK:
-			results.append(json.data)
-	return results
-
-func _get_save_path(filename: String) -> String:
-	var addon = "debug-" if OS.is_debug_build() else ""
-	return save_dir + "/" + addon + filename
-
-func start_save_thread():
-	if thread.is_started():
-		thread.wait_to_finish()
-	thread.start(save)
-
-func load_save():
-	_load_settings()
-	_load_characters()
-	_load_worlds()
-	_load_items()
-	_load_abilities()
-
-func _load_settings() -> void:
-	if not FileAccess.file_exists(_get_save_path("settings.save")):
-		return # Error! We don't have a save to load.
-
-	# Load the file line by line and process that dictionary to restore
-	# the object it represents.
-	var parsed:Array = _parse_save_file(_get_save_path("settings.save"))
-	for node_data in parsed:
-		if themes.has(node_data.get("theme","Default")):
-			var option:String = node_data.get("theme","Default")
-			for i in range(themes_button.get_item_count()):
-				if themes_button.get_item_text(i) == option:
-					themes_button.select(i)
-			if themes[option] is String:
-				ThemeLoader.load_theme(themes[option])
-			else:
-				get_tree().root.theme = themes[option]
-
-func _load_abilities() -> void:
-	if not FileAccess.file_exists(_get_save_path("abilities.save")):
-		return # Error! We don't have a save to load.
-	var parsed:Array = _parse_save_file(_get_save_path("abilities.save"))
-	for node_data in parsed:
-		var ability:Ability = Ability.from_data(node_data)
-		Globals.abilities.set_at(ability.name.value,ability)
-
-func _load_items() -> void:
-	if not FileAccess.file_exists(_get_save_path("items.save")):
-		return # Error! We don't have a save to load.
-
-	var parsed:Array = _parse_save_file(_get_save_path("items.save"))
-	for node_data in parsed:
-		var item:Item = Item.from_data(node_data)
-		Globals.items.set_at(item.name.value,item)
-
-func _load_characters() -> void:
-	if not FileAccess.file_exists(_get_save_path("characters.save")):
-		return # Error! We don't have a save to load.
-
-	Globals.characters.clear()
-
-	var parsed:Array = _parse_save_file(_get_save_path("characters.save"))
-	for node_data in parsed:
-		var character = Character.from_date(node_data)
-		Globals.characters.append(character)
-	first_load = true
-	_reload_characters(Globals.characters.value)
-
-func _load_worlds() -> void:
-	if not FileAccess.file_exists(_get_save_path("worlds.save")):
-		return # Error! We don't have a save to load.
-
-	worlds.clear()
-
-	var parsed:Array = _parse_save_file(_get_save_path("worlds.save"))
-	for node_data in parsed:
-		var world = World.from_date(node_data)
-		worlds.append(world)
-
-func save():
-	_save_items()
-	_save_abilities()
-	_save_settings()
-	_save_characters()
-	_save_worlds()
-
-func _save_settings():
-	var save_file = FileAccess.open(_get_save_path("settings.save"),FileAccess.WRITE)
-	var data:Dictionary = {
-		"theme":themes_button.get_item_text(themes_button.get_item_index(themes_button.get_selected_id()))
-	}
-	var json_string = JSON.stringify(data)
-	save_file.store_line(json_string)
-
-func _save_abilities():
-	var save_file = FileAccess.open(_get_save_path("abilities.save"),FileAccess.WRITE)
-	for ability in Globals.abilities.value.values():
-		var json_string = JSON.stringify(ability.save())
-		save_file.store_line(json_string)
-
-func _save_items():
-	var save_file = FileAccess.open(_get_save_path("items.save"),FileAccess.WRITE)
-	for item in Globals.items.value.values():
-		var json_string = JSON.stringify(item.save())
-		save_file.store_line(json_string)
-
-func _save_characters():
-	var save_file = FileAccess.open(_get_save_path("characters.save"),FileAccess.WRITE)
-	for c:Character in Globals.characters.value:
-		# Check the node has a save function.
-		if !c.has_method("save"):
-			print("persistent node '%s' is missing a save() function, skipped" % c.name)
-			continue
-		# Call the node's save function.
-		var character_data:Dictionary = c.call("save")
-		
-		# JSON provides a static method to serialized JSON string.
-		var json_string = JSON.stringify(character_data)
-		# Store the save dictionary as a new line in the save file.
-		save_file.store_line(json_string)
-func _save_worlds():
-	var save_file = FileAccess.open(_get_save_path("worlds.save"),FileAccess.WRITE)
-	for c:World in worlds:
-		# Check the node has a save function.
-		if !c.has_method("save"):
-			print("persistent node '%s' is missing a save() function, skipped" % c.name)
-			continue
-		# Call the node's save function.
-		var world_data:Dictionary = c.call("save")
-
-		# JSON provides a static method to serialized JSON string.
-		var json_string = JSON.stringify(world_data)
-		# Store the save dictionary as a new line in the save file.
-		save_file.store_line(json_string)
-
 #endregion
 
 func _exit_tree() -> void:
-	start_save_thread()
-	thread.wait_to_finish()
+	SaveManager.start_save_thread()
+	SaveManager.thread.wait_to_finish()
 
 
 func _on_saves_folder_pressed() -> void:
@@ -545,10 +396,12 @@ func _on_backups_pressed() -> void:
 
 func _on_themes_button_item_selected(index: int) -> void:
 	var option:String  = themes_button.get_item_text(index)
-	if themes[option] is String:
-		ThemeLoader.load_theme(themes[option])
+	print ("test")
+	if Globals.themes.get_at(option) is String:
+		print("ran:"+Globals.themes.get_at(option))
+		ThemeLoader.load_theme(Globals.themes.get_at(option))
 	else:
-		get_tree().root.theme = themes[option]
+		get_tree().root.theme = Globals.themes.get_at(option)
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:
@@ -569,7 +422,7 @@ func _on_submit_ability_name_pressed() -> void:
 	Globals.abilities.set(new_ability.name,new_ability)
 	ability_create.hide()
 	_reload_abilities()
-	start_save_thread()
+	SaveManager.start_save_thread()
 
 func delete_ability(ability_id):
 	Globals.abilities.erase(ability_id)
@@ -583,7 +436,7 @@ func _on_submit_item_name_pressed() -> void:
 	Globals.items.set(new_item.name,new_item)
 	item_create.hide()
 	_reload_items()
-	start_save_thread()
+	SaveManager.start_save_thread()
 
 func delete_item(item_id):
 	Globals.items.erase(item_id)
