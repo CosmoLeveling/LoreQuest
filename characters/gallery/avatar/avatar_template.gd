@@ -7,10 +7,7 @@ var image_path:String = ""
 
 func _ready() -> void:
 	var image: Image = Image.new()
-	if FileAccess.file_exists(image_path):
-		image.load(image_path)
-	else:
-		image.load("res://icons/default.png")
+	image.load(image_path)
 	image = Globals.center_crop(image)
 	var image_texture:ImageTexture = ImageTexture.new()
 	image_texture.set_image(image)

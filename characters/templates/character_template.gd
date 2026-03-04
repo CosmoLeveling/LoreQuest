@@ -21,9 +21,6 @@ func refresh_visuals():
 	dirty = false
 	if character:
 		character.name.reactive_changed.connect(func(reactive):name_label.text=reactive.value)
-		character.group.reactive_changed.connect(func(reactive):%Group.text=reactive.value)
-		%Group.visible= %Group.text==""
-		
 		character.image_path.reactive_changed.connect(func(reactive):
 			var image:Image = Image.new()
 			if FileAccess.file_exists(reactive.value):
@@ -38,7 +35,6 @@ func refresh_visuals():
 			avatar.texture = image_texture
 			)
 		character.name.manually_emit()
-		character.group.manually_emit()
 		character.image_path.manually_emit()
 
 

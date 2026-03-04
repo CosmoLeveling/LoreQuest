@@ -12,7 +12,6 @@ var max_mana:ReactiveInt = ReactiveInt.new(0,self)
 var ability_ids:ReactiveArray = ReactiveArray.new([],self)
 var item_ids:ReactiveArray = ReactiveArray.new([],self)
 var notes:ReactiveArray = ReactiveArray.new([],self)
-var group:ReactiveString = ReactiveString.new("",self)
 var open:bool = false
 func _init(name_val:String,new_image_path:String) -> void:
 	name.value = name_val
@@ -34,8 +33,7 @@ func save() -> Dictionary:
 		"gallery_images": gallery_images.value,
 		"ability_ids" : ability_ids.value,
 		"item_ids": item_ids.value,
-		"notes": note_dict,
-		"group": group.value
+		"notes": note_dict
 	}
 	return save_dict
 static func from_date(data:Dictionary)->Character:
@@ -45,9 +43,7 @@ static func from_date(data:Dictionary)->Character:
 	character.description.value = data.get_or_add("description","")
 	character.pronouns.value = data.get_or_add("pronouns","")
 	character.race.value = data.get_or_add("race","")
-	character.group.value = data.get_or_add("group","")
-	if not Globals.groups.value.has(character.group.value):
-		Globals.groups.append(character.group.value)
+	
 	var image_list:Array[String]
 	for image in data.get_or_add("gallery_images",[]):
 		image_list.append(image)
