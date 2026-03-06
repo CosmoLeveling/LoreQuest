@@ -25,7 +25,6 @@ const ITEM_TEMPLATE = preload("uid://demp65srmd3xs")
 @onready var themes_button: OptionButton = $MarginContainer/VBoxContainer/HBoxContainer/ThemesButton
 
 @onready var world_grid: FlowContainer = $MarginContainer/VBoxContainer/TabContainer/Worlds/VBoxContainer/ScrollContainer/WorldGrid
-
 @onready var amount: Label = $MarginContainer/VBoxContainer/TabContainer/Characters/VBoxContainer2/Amount
 
 #region Character Creation
@@ -151,8 +150,8 @@ func _reload_characters(characters: Array) -> void:
 				panel = CHARACTER_TEMPLATE.instantiate()
 				character_grid.add_child(panel)
 				# Connect signals **only once** when the panel is newly created
-				panel.deleted.connect(start_save_thread)
-				panel.open_character.connect(open_character)
+			panel.deleted.connect(start_save_thread)
+			panel.open_character.connect(open_character)
 		
 			panel.character = ch
 		

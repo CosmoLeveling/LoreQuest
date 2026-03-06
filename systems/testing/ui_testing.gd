@@ -3,7 +3,7 @@ extends Control
 var v:ReactiveString=ReactiveString.new("")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().root.theme = ThemeLoader.load_theme("user://themes/Rosepine.json")
+	get_tree().root.theme = ThemeLoader.load_theme_local("res://themes/Rosepine.json")
 	%LineEdit.text_changed.connect(func(text):v.value=text)
 	%LineEdit2.text_changed.connect(func(text):v.value=text)
 	v.reactive_changed.connect(func(reactive):
