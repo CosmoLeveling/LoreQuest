@@ -1,5 +1,5 @@
 extends Node
-
+var current_save_version:int = 1
 # The SaveLoad class is responsible for managing saving and loading operations for the application.
 # This script centralizes all save/load tasks, improving modularity and code separation.
 
@@ -13,7 +13,7 @@ func write_save_file(path: String, data: Dictionary):
 	if file:
 		var json_string = JSON.stringify(data)
 		file.store_line(json_string)
-
+		file.close()
 # Helper function to read from a save file.
 func read_save_file(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -28,7 +28,7 @@ func read_save_file(path: String) -> Dictionary:
 	if json.parse(json_string) != OK:
 		print("Error parsing JSON from save file.")
 		return {}
-
+	file.close()
 	return json.data
 
 # Save character data to a file.
@@ -37,17 +37,52 @@ func save_characters(characters: Array):
 	for character in characters:
 		if character.has_method("save"):
 			data.append(character.save())
-	write_save_file(SAVE_DIR + "characters.save", {"characters": data})
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	write_save_file(SAVE_DIR +addon + "characters.save", {"characters": data,"save_version":current_save_version})
 
 # Load character data from a file.
 func load_characters() -> Array:
-	var save_data = read_save_file(SAVE_DIR + "characters.save")
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_data = read_save_file(SAVE_DIR+addon + "characters.save")
 	var characters = []
 	if "characters" in save_data:
-		for char_data in save_data["characters"]:
+		if save_data.get("save_version",0)==current_save_version:
+			for char_data in save_data["characters"]:
+				characters.append(Character.from_data(char_data))
+		else:
+			for char_data in migrate_characters(save_data.get("save_version",0)):
+				characters.append(Character.from_data(char_data))
+	else:
+		for char_data in migrate_characters(save_data.get("save_version",0)):
 			characters.append(Character.from_data(char_data))
 	return characters
+func migrate_characters(version:int) -> Array:
+	var characters : Array = []
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if version <=0:
+		var save_file = FileAccess.open(SAVE_DIR+"/"+addon+"characters.save", FileAccess.READ)
+		while save_file.get_position() < save_file.get_length():
+			var json_string = save_file.get_line()
 
+			# Creates the helper class to interact with JSON.
+			var json = JSON.new()
+
+			# Check if there is any error while parsing the JSON string, skip in case of failure.
+			var parse_result = json.parse(json_string)
+			if not parse_result == OK:
+				print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+				continue
+
+		# Get the data from the JSON object.
+			var node_data = json.data
+			characters.append(node_data)
+	return characters
 # Save world data to a file.
 func save_worlds(worlds: Array):
 	var data = []
@@ -64,4 +99,3 @@ func load_worlds() -> Array:
 		for world_data in save_data["worlds"]:
 			worlds.append(World.from_data(world_data))
 	return worlds
-

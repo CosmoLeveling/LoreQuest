@@ -37,9 +37,9 @@ func save() -> Dictionary:
 	}
 	return save_dict
 static func from_data(data:Dictionary)->Character:
-	var character = Character.new(data.get("name"),data.get("image_path"))
-	character.mana.value = data.get("mana")
-	character.max_mana.value = data.get("max_mana")
+	var character = Character.new(data.get("name",""),data.get("image_path",""))
+	character.mana.value = data.get("mana",0)
+	character.max_mana.value = data.get("max_mana",0)
 	character.description.value = data.get_or_add("description","")
 	character.pronouns.value = data.get_or_add("pronouns","")
 	character.race.value = data.get_or_add("race","")

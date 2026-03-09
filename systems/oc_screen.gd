@@ -143,6 +143,10 @@ func _reload_characters(characters: Array) -> void:
 			var panel: CharacterTemplate
 			if i < existing_panels_count:
 				panel = existing_panels[i] as CharacterTemplate
+				if panel.deleted.is_connected(start_save_thread):
+					panel.deleted.disconnect(start_save_thread)
+				if panel.open_character.is_connected(open_character):
+					panel.open_character.disconnect(open_character)
 			else:
 				panel = CHARACTER_TEMPLATE.instantiate()
 				character_grid.add_child(panel)
@@ -367,34 +371,8 @@ func _load_items() -> void:
 		Globals.items.set_at(item.name.value,item)
 
 func _load_characters() -> void:
-	var addon := ""
-	if OS.is_debug_build():
-		addon = "debug-"
-	if not FileAccess.file_exists(save_dir + "/"+addon+"characters.save"):
-		return # Error! We don't have a save to load.
-
 	Globals.characters.clear()
-
-	# Load the file line by line and process that dictionary to restore
-	# the object it represents.
-	var save_file = FileAccess.open(save_dir+"/"+addon+"characters.save", FileAccess.READ)
-	while save_file.get_position() < save_file.get_length():
-		var json_string = save_file.get_line()
-
-		# Creates the helper class to interact with JSON.
-		var json = JSON.new()
-
-		# Check if there is any error while parsing the JSON string, skip in case of failure.
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
-
-		# Get the data from the JSON object.
-		var node_data = json.data
-
-		var character = Character.from_data(node_data)
-		Globals.characters.append(character)
+	Globals.characters.value = SaveLoad.load_characters()
 	first_load = true
 	_reload_characters(Globals.characters.value)
 
