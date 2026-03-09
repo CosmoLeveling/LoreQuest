@@ -26,7 +26,7 @@ func save() -> Dictionary:
 		"room_data":room_array
 	}
 	return save_dict
-static func from_date(data:Dictionary)->World:
+static func from_data(data:Dictionary)->World:
 	var world = World.new(data.get("name"),data.get("image_path"))
 	world.description = data.get_or_add("description","")
 	world.history = data.get_or_add("history","")

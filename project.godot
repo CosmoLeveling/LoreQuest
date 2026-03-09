@@ -20,6 +20,7 @@ config/icon="res://icons/icon.svg"
 
 Globals="*uid://3smd3084s2eb"
 ThemeLoader="*uid://cy42u2w1a6m0u"
+SaveLoad="*uid://dml45348s33j4"
 
 [display]
 

@@ -129,42 +129,30 @@ func _create_backup():
 func _reload_characters(characters: Array) -> void:
 	if first_load:
 		var existing_panels = character_grid.get_children()
-		var needed = characters.size()
-	
-		while existing_panels.size() > needed:
+		var existing_panels_count = existing_panels.size()
+		var panels_to_remove = existing_panels_count - characters.size()
+		for _i in range(panels_to_remove):
 			var panel = existing_panels.pop_back()
-		# Clean up connections to prevent duplicates / leaks
 			if panel.deleted.is_connected(start_save_thread):
 				panel.deleted.disconnect(start_save_thread)
 			if panel.open_character.is_connected(open_character):
 				panel.open_character.disconnect(open_character)
 			panel.queue_free()
-	
-		for i in characters.size():
+		for i in range(characters.size()):
 			var ch: Character = characters[i]
 			var panel: CharacterTemplate
-			
-			if i < existing_panels.size():
+			if i < existing_panels_count:
 				panel = existing_panels[i] as CharacterTemplate
 			else:
 				panel = CHARACTER_TEMPLATE.instantiate()
 				character_grid.add_child(panel)
-				# Connect signals **only once** when the panel is newly created
 			panel.deleted.connect(start_save_thread)
 			panel.open_character.connect(open_character)
-		
 			panel.character = ch
-		
-			panel.visible = (
-			ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())
-			or %CharacterSearch.text.is_empty()
-		)
-		
+			panel.visible = (ch.name.value.to_lower().contains(%CharacterSearch.text.to_lower())or %CharacterSearch.text.is_empty())
 			panel.refresh_visuals()
-	
-	character_grid.queue_sort()
-	
-	amount.text = "Current Amount: " + str(characters.size())
+		character_grid.queue_sort()
+		amount.text = "Current Amount: " + str(characters.size())
 
 func open_character(character:Character):
 	if not character.open:
@@ -306,40 +294,23 @@ func load_save():
 	_load_items()
 	_load_abilities()
 
-func _load_settings() -> void:
-	var addon := ""
-	if OS.is_debug_build():
-		addon = "debug-"
-	if not FileAccess.file_exists(save_dir + "/"+addon+"settings.save"):
-		return # Error! We don't have a save to load.
+func load_json(file_path: String) -> Dictionary:
+	if not FileAccess.file_exists(file_path):
+		return {}  # Return empty if file is missing.
 
-	# Load the file line by line and process that dictionary to restore
-	# the object it represents.
-	var save_file = FileAccess.open(save_dir+"/"+addon+"settings.save", FileAccess.READ)
-	while save_file.get_position() < save_file.get_length():
-		var json_string = save_file.get_line()
+	var save_file = FileAccess.open(file_path, FileAccess.READ)
+	if save_file.get_error() != OK:
+		return {}  # Return empty if file could not be opened.
 
-		# Creates the helper class to interact with JSON.
-		var json = JSON.new()
+	var json_string = save_file.get_as_text()  # Reading the entire file as text.
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if parse_result != OK:
+		print("JSON Parse Error: ", json.get_error_message())
+		return {}  # Return empty in case of any parsing error.
 
-		# Check if there is any error while parsing the JSON string, skip in case of failure.
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
+	return json.data  # Returning the parsed JSON data.
 
-		# Get the data from the JSON object.
-		var node_data:Dictionary = json.data
-
-		if themes.has(node_data.get("theme","Default")):
-			var option:String = node_data.get("theme","Default")
-			for i in range(themes_button.get_item_count()):
-				if themes_button.get_item_text(i) == option:
-					themes_button.select(i)
-			if themes[option] is String:
-				ThemeLoader.load_theme(themes[option])
-			else:
-				get_tree().root.theme = themes[option]
 
 func _load_abilities() -> void:
 	var addon := ""
@@ -422,10 +393,45 @@ func _load_characters() -> void:
 		# Get the data from the JSON object.
 		var node_data = json.data
 
-		var character = Character.from_date(node_data)
+		var character = Character.from_data(node_data)
 		Globals.characters.append(character)
 	first_load = true
 	_reload_characters(Globals.characters.value)
+
+func _load_settings() -> void:
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	if not FileAccess.file_exists(save_dir + "/"+addon+"settings.save"):
+		return # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	var save_file = FileAccess.open(save_dir+"/"+addon+"settings.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+
+		# Creates the helper class to interact with JSON.
+		var json = JSON.new()
+
+		# Check if there is any error while parsing the JSON string, skip in case of failure.
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+
+		# Get the data from the JSON object.
+		var node_data:Dictionary = json.data
+
+		if themes.has(node_data.get("theme","Default")):
+			var option:String = node_data.get("theme","Default")
+			for i in range(themes_button.get_item_count()):
+				if themes_button.get_item_text(i) == option:
+					themes_button.select(i)
+			if themes[option] is String:
+				ThemeLoader.load_theme(themes[option])
+			else:
+				get_tree().root.theme = themes[option]
 
 func _load_worlds() -> void:
 	var addon := ""
@@ -454,7 +460,7 @@ func _load_worlds() -> void:
 		# Get the data from the JSON object.
 		var node_data = json.data
 
-		var world = World.from_date(node_data)
+		var world = World.from_data(node_data)
 		worlds.append(world)
 
 func save():
@@ -493,23 +499,10 @@ func _save_items():
 		var json_string = JSON.stringify(item.save())
 		save_file.store_line(json_string)
 
+
+# Updated to use SaveLoad manager
 func _save_characters():
-	var addon := ""
-	if OS.is_debug_build():
-		addon = "debug-"
-	var save_file = FileAccess.open(save_dir+"/"+addon+"characters.save",FileAccess.WRITE)
-	for c:Character in Globals.characters.value:
-		# Check the node has a save function.
-		if !c.has_method("save"):
-			print("persistent node '%s' is missing a save() function, skipped" % c.name)
-			continue
-		# Call the node's save function.
-		var character_data:Dictionary = c.call("save")
-		
-		# JSON provides a static method to serialized JSON string.
-		var json_string = JSON.stringify(character_data)
-		# Store the save dictionary as a new line in the save file.
-		save_file.store_line(json_string)
+	SaveLoad.save_characters(Globals.characters.value)
 	amount.set_deferred("text", "Current Amount: "+str(Globals.characters.value.size()))
 func _save_worlds():
 	var addon := ""
@@ -548,7 +541,7 @@ func _on_backups_pressed() -> void:
 		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
 		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = BACKUPS_MENU.instantiate()
-		window.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
+		window.initial_position  = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
 		windows.add_child(window)
 		window.title = "backup"
 		window.add_child(menu)
@@ -575,9 +568,9 @@ func _on_new_ability_pressed() -> void:
 
 
 func _on_submit_ability_name_pressed() -> void:
-	var new_ability = Ability.new()
-	new_ability.name = ability_name_line.text
-	Globals.abilities.set(new_ability.name,new_ability)
+	var new_ability:Ability = Ability.new()
+	new_ability.name.value = ability_name_line.text
+	Globals.abilities.set_at(new_ability.name.value,new_ability)
 	ability_create.hide()
 	_reload_abilities()
 	start_save_thread()
@@ -589,9 +582,10 @@ func _on_new_item_pressed() -> void:
 	item_create.show()
 
 func _on_submit_item_name_pressed() -> void:
-	var new_item = Item.new()
-	new_item.name = item_name_line.text
-	Globals.items.set(new_item.name,new_item)
+	var new_item:Item = Item.new()
+	new_item.name.value = item_name_line.text
+	Globals.items.set_at(item_name_line.text, new_item)
+	print("this is the new item",new_item)
 	item_create.hide()
 	_reload_items()
 	start_save_thread()

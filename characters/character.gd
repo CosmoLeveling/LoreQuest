@@ -36,7 +36,7 @@ func save() -> Dictionary:
 		"notes": note_dict
 	}
 	return save_dict
-static func from_date(data:Dictionary)->Character:
+static func from_data(data:Dictionary)->Character:
 	var character = Character.new(data.get("name"),data.get("image_path"))
 	character.mana.value = data.get("mana")
 	character.max_mana.value = data.get("max_mana")
