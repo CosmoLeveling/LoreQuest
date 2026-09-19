@@ -9,6 +9,8 @@ var race:Race:
 		if race != v:
 			race = v
 
+func _ready() -> void:
+	%Name.text = race.name.value
 
 func _on_open_pressed() -> void:
 	race_selected.emit(race)
@@ -16,6 +18,5 @@ func _on_open_pressed() -> void:
 
 func _on_delete_pressed() -> void:
 	race_deleted.emit()
-	Globals.races.erase(race.name.value)
+	Globals.races.erase(race)
 	queue_free()
-

@@ -16,7 +16,7 @@ func _ready() -> void:
 			image.load(world.image_path)
 			image = Globals.center_crop(image)
 		else:
-			image = load("res://assets/default_world.png")
+			image = load("res://icons/default_world.png")
 		var image_texture = ImageTexture.new()
 		image_texture.set_image(image)
 		avatar.texture = image_texture

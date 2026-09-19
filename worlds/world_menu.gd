@@ -18,7 +18,7 @@ func _ready() -> void:
 		image.load(world.image_path)
 		image = Globals.center_crop(image)
 	else:
-		image = load("res://assets/default_world.png")
+		image = load("res://icons/default_world.png")
 	var image_texture = ImageTexture.new()
 	image_texture.set_image(image)
 	avatar.texture = image_texture
@@ -26,7 +26,7 @@ func _ready() -> void:
 	if FileAccess.file_exists(world.world_map_path):
 		map_image.load(world.world_map_path)
 	else:
-		map_image = load("res://assets/default_world_map.png")
+		map_image = load("res://icons/default_world_map.png")
 	var map_image_texture = ImageTexture.new()
 	map_image_texture.set_image(map_image)
 	world_map.texture = map_image_texture

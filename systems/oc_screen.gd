@@ -163,6 +163,7 @@ func open_character(character:Character):
 		character.open = true
 		var window = Window.new()
 		window.content_scale_size = get_viewport_rect().size
+		window.canvas_item_default_texture_filter=Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
 		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = CHARACTER_MENU.instantiate()
@@ -198,6 +199,7 @@ func open_world(world:World):
 		world.open = true
 		var window = Window.new()
 		window.content_scale_size = get_viewport_rect().size
+		window.canvas_item_default_texture_filter=Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 		window.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
 		window.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 		var menu = WORLD_MENU.instantiate()
@@ -248,7 +250,7 @@ func _on_world_create_pressed() -> void:
 	world_create.show()
 	world_name_line.text = ""
 	var image_texture = ImageTexture.new()
-	image_texture.set_image(load("res://assets/default_world.png"))
+	image_texture.set_image(load("res://icons/default_world.png"))
 	world_image_text.texture = image_texture
 	new_image = ""
 
@@ -296,6 +298,7 @@ func load_save():
 	_load_characters()
 	_load_worlds()
 	_load_items()
+	_load_races()
 	_load_abilities()
 
 func load_json(file_path: String) -> Dictionary:
@@ -314,6 +317,11 @@ func load_json(file_path: String) -> Dictionary:
 		return {}  # Return empty in case of any parsing error.
 
 	return json.data  # Returning the parsed JSON data.
+
+
+func _load_races() -> void:
+	Globals.races.clear()
+	SaveLoad.load_races()
 
 
 func _load_abilities() -> void:
@@ -443,10 +451,14 @@ func _load_worlds() -> void:
 
 func save():
 	_save_items()
+	_save_races()
 	_save_abilities()
 	_save_settings()
 	_save_characters()
 	_save_worlds()
+
+func _save_races() -> void:
+	SaveLoad.save_races(Globals.races.value)
 
 func _save_settings():
 	var addon := ""

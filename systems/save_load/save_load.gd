@@ -99,3 +99,26 @@ func load_worlds() -> Array:
 		for world_data in save_data["worlds"]:
 			worlds.append(World.from_data(world_data))
 	return worlds
+
+# Function to save races to file
+func save_races(races: Array):
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var data = []
+	for race in races:
+		if race.has_method("save"):
+			data.append(race.save())
+	write_save_file(SAVE_DIR+ addon + "races.save", {"races": data})
+
+# Function to load races from file
+func load_races():
+	var addon := ""
+	if OS.is_debug_build():
+		addon = "debug-"
+	var save_data = read_save_file(SAVE_DIR+addon + "races.save")
+	var races = []
+	if "races" in save_data:
+		for race_data in save_data["races"]:
+			races.append(Race.from_data(race_data))
+	Globals.races.value = races

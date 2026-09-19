@@ -2,7 +2,7 @@ extends Node
 
 var abilities:ReactiveDictionary = ReactiveDictionary.new()
 var items:ReactiveDictionary = ReactiveDictionary.new()
-var races:ReactiveDictionary = ReactiveDictionary.new()
+var races:ReactiveArray = ReactiveArray.new()
 var characters: ReactiveArray = ReactiveArray.new()
 
 func center_crop(image:Image)->Image:

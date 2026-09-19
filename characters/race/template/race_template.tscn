@@ -16,6 +16,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="Name" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1921219329]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "NAME"

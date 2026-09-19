@@ -21,7 +21,7 @@ func reload_races(_reactive:Reactive):
 	for c in %RaceGrid.get_children():
 		c.queue_free()
 
-	for race in Globals.races.value.values():
+	for race in Globals.races.value:
 		var temp = RACE_TEMPLATE.instantiate()
 		temp.race = race
 		temp.race_selected.connect(select_race)
@@ -29,8 +29,12 @@ func reload_races(_reactive:Reactive):
 
 # Function to handle the creation of a new race
 func create_new_race(init_name:String):
-	if not Globals.races.has(init_name):
-		Globals.races.set_at(init_name,Race.new(init_name))
+	var has_race = false
+	for race in Globals.races.value:
+		if race.name.value == init_name:
+			has_race = true
+	if not has_race:
+		Globals.races.append(Race.new(init_name))
 
 # Function to handle the selection of a race
 func select_race(race:Race):
