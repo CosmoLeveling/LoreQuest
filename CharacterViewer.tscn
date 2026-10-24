@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cg6ybptrr35a2"]
+
+[ext_resource type="Texture2D" uid="uid://jleatc5prg28" path="res://140b8b25-a8ed-4517-b2f1-cf132debccb0.png" id="1_pe6ip"]
+
+[node name="CharacterViewer" type="Control" unique_id=1586901133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1229461742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=47431584]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer" unique_id=1095502896]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" unique_id=565708037]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=762206084]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer" unique_id=644647244]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1431833767]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_pe6ip")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=1020867171]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=470001323]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Abilities" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=683930695]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities" unique_id=320596712]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer" unique_id=344066020]
+layout_mode = 2
+text = "Abilities"
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer" unique_id=1301850208]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer/HFlowContainer" unique_id=1501277947]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spell name that is super long"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer/HFlowContainer" unique_id=2139979395]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer/HFlowContainer" unique_id=201424285]
+layout_mode = 2
+text = "Test"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Abilities/VBoxContainer/HFlowContainer" unique_id=164603091]
+layout_mode = 2
+text = "Idk"
+
+[node name="Items" type="PanelContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=1516513480]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items" unique_id=341008040]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer" unique_id=2131312873]
+layout_mode = 2
+text = "Items"
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer" unique_id=1932547341]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer/HFlowContainer" unique_id=683492089]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spell name that is super long"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer/HFlowContainer" unique_id=601472671]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer/HFlowContainer" unique_id=359791164]
+layout_mode = 2
+text = "Test"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer/Items/VBoxContainer/HFlowContainer" unique_id=313798407]
+layout_mode = 2
+text = "Idk"
